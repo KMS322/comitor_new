@@ -14,7 +14,13 @@ const SigninContent = () => {
       <div className="section_container">
         <div className="article_container">
           <div className="title_box">
-            <img src="/images/login/back_btn.png" alt="" />
+            <img
+              src="/images/login/back_btn.png"
+              alt=""
+              onClick={() => {
+                navigate(-1);
+              }}
+            />
             <img src="/images/logo.png" alt="" />
           </div>
           <p>

@@ -14,6 +14,7 @@ const Shop = () => {
   const { products } = useSelector((state) => state.adminProduct);
   const [uniqueProducts, setUniqueProducts] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
+  const [selectedStyle, setSelectedStyle] = useState("");
 
   useEffect(() => {
     dispatch({
@@ -49,8 +50,45 @@ const Shop = () => {
       setSortedProducts(uniqueProducts);
     }
   }, [uniqueProducts]);
+  console.log("uniqueProducts : ", uniqueProducts);
+  const handleSort = (sort) => {
+    let sortedProducts;
+    switch (sort) {
+      case "신상품":
+        // createdAt으로 정렬 (최신 상품이 위로 오도록)
+        sortedProducts = [...uniqueProducts].sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        );
+        break;
 
-  const handleSort = () => {};
+      case "상품명":
+        // product_name으로 정렬 (알파벳 순서)
+        sortedProducts = [...uniqueProducts].sort((a, b) =>
+          a.product_name.localeCompare(b.product_name)
+        );
+        break;
+
+      case "낮은가격":
+        // product_salePrice로 오름차순 정렬 (가장 저렴한 가격이 위로 오도록)
+        sortedProducts = [...uniqueProducts].sort(
+          (a, b) => a.product_salePrice - b.product_salePrice
+        );
+        break;
+
+      case "높은가격":
+        // product_salePrice로 내림차순 정렬 (가장 비싼 가격이 위로 오도록)
+        sortedProducts = [...uniqueProducts].sort(
+          (a, b) => b.product_salePrice - a.product_salePrice
+        );
+        break;
+
+      default:
+        // 기본 정렬 또는 처리
+        sortedProducts = uniqueProducts;
+        break;
+    }
+    setUniqueProducts(sortedProducts);
+  };
 
   return (
     <div className="shop">
@@ -60,7 +98,10 @@ const Shop = () => {
           <p>{uniqueProducts && uniqueProducts.length}개의 상품이 있습니다.</p>
           <ul id="pc">
             <li
-              onClick={() => {}}
+              onClick={() => {
+                handleSort("신상품");
+                setSelectedStyle("신상품");
+              }}
               // style={{
               //   color: selectedStyle === "id" ? "#000035" : "inherit",
               // }}
@@ -68,7 +109,10 @@ const Shop = () => {
               신상품
             </li>
             <li
-              onClick={() => {}}
+              onClick={() => {
+                handleSort("상품명");
+                setSelectedStyle("상품명");
+              }}
               // style={{
               //   color: selectedStyle === "name" ? "#000035" : "inherit",
               // }}
@@ -76,7 +120,10 @@ const Shop = () => {
               상품명
             </li>
             <li
-              onClick={() => {}}
+              onClick={() => {
+                handleSort("낮은가격");
+                setSelectedStyle("낮은가격");
+              }}
               // style={{
               //   color:
               //     selectedStyle === "price" && sortOrder === "asc"
@@ -87,7 +134,10 @@ const Shop = () => {
               낮은가격
             </li>
             <li
-              onClick={() => {}}
+              onClick={() => {
+                handleSort("높은가격");
+                setSelectedStyle("높은가격");
+              }}
               // style={{
               //   color:
               //     selectedStyle === "price" && sortOrder === "desc"
@@ -98,7 +148,7 @@ const Shop = () => {
               높은가격
             </li>
           </ul>
-          <select id="mobile" />
+          {/* <select id="mobile" /> */}
         </div>
         <div className="article_container">
           {uniqueProducts &&

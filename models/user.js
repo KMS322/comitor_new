@@ -4,12 +4,11 @@ module.exports = (sequelize, DataTypes) => {
     {
       user_id: {
         type: DataTypes.STRING(30),
-        allowNull: false,
-        unique: true,
+        allowNull: true,
       },
       user_pw: {
         type: DataTypes.STRING(100),
-        allowNull: false,
+        allowNull: true,
       },
       user_name: {
         type: DataTypes.STRING(10),
@@ -37,6 +36,14 @@ module.exports = (sequelize, DataTypes) => {
       },
       user_coupon: {
         type: DataTypes.STRING(30),
+        allowNull: true,
+      },
+      platform_type: {
+        type: DataTypes.STRING(20),
+        allowNull: true,
+      },
+      platform_id: {
+        type: DataTypes.STRING(100),
         allowNull: true,
       },
     },

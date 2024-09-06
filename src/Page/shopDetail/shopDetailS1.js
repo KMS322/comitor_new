@@ -168,7 +168,7 @@ const ShopDetailS1 = ({ productCode }) => {
               바로 주문
             </div>
           </div>
-          <div
+          {/* <div
             className="like_box"
             onClick={() => {
               setLiked(!liked);
@@ -183,7 +183,7 @@ const ShopDetailS1 = ({ productCode }) => {
               alt=""
             />
             <p>좋아요</p>
-          </div>
+          </div> */}
           <div id="mobile" className="total_price">
             <p>총 상품 금액(수량)</p>
             <p>

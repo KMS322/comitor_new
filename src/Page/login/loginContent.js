@@ -54,7 +54,13 @@ const LoginContent = () => {
       <div className="section_container">
         <div className="article_container">
           <div className="title_box">
-            <img src="/images/login/back_btn.png" alt="" />
+            <img
+              src="/images/login/back_btn.png"
+              alt=""
+              onClick={() => {
+                navigate("/");
+              }}
+            />
             <p>로그인</p>
           </div>
           <div className="input_box">
