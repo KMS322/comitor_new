@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const app = express();
-
+const port = process.env.PORT || 80;
 // 정적 파일을 제공할 경로 설정
 app.use(express.static(path.join(__dirname, "build")));
 
@@ -13,6 +13,6 @@ app.get("/*", function (req, res) {
 // 포트 설정
 // const PORT = process.env.PORT || 8001;
 
-app.listen(8001, () => {
-  console.log(`Server is running on port 8001`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
