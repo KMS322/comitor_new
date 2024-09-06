@@ -1,0 +1,393 @@
+/* board_container */
+.board_container {
+  width: 100%;
+  height: auto;
+  min-height: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.board_container .title {
+  font-size: 2vw;
+  margin-top: 5vw;
+}
+.board_container .table {
+  width: 60vw;
+  height: auto;
+  min-height: 20vw;
+  margin: 0 auto;
+  margin-top: 4vw;
+  position: relative;
+}
+.board_container .table p {
+  font-size: 1.1vw;
+}
+.board_container .table .head_row {
+  height: 2.5vw;
+}
+.board_container .table .head_row p {
+  font-weight: 600;
+}
+.board_container .table .row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+}
+.board_container .table .content_row {
+  height: 2vw;
+}
+.board_container .table .row p:nth-child(1) {
+  width: 3vw;
+  margin-left: 1.3vw;
+  text-align: center;
+}
+.board_container .table .row p:nth-child(2) {
+  width: 28vw;
+  margin-left: 3vw;
+  cursor: pointer;
+}
+.board_container .table .row p:nth-child(3) {
+  width: 8vw;
+  margin-left: 1.3vw;
+  text-align: center;
+}
+.board_container .table .row p:nth-child(4) {
+  width: 6vw;
+  margin-left: 1.3vw;
+  text-align: center;
+}
+.board_container .table .row p:nth-child(5) {
+  width: 4vw;
+  margin-left: 4vw;
+  font-size: 0.9vw;
+  color: red;
+  text-align: center;
+  cursor: pointer;
+}
+.board_container .table .btn_box {
+  width: 7vw;
+  height: 2vw;
+  margin-top: 2vw;
+  position: absolute;
+  right: 0;
+  bottom: -3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1vw;
+  cursor: pointer;
+  background-color: #1e0052;
+  color: white;
+}
+
+/* writeModal_background */
+.writeModal_container {
+  width: 40vw;
+  height: 30vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.writeModal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.writeModal_content {
+  margin: 20px 0;
+}
+.writeModal_content .input {
+  width: 100%;
+  height: 1.5vw;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1vw;
+}
+.writeModal_content .input:nth-child(2) {
+  height: auto;
+}
+.writeModal_content .input p {
+  width: 16%;
+  font-size: 0.9vw;
+  font-weight: 600;
+}
+.writeModal_content .input input {
+  width: 80%;
+  padding-left: 0.3vw;
+  font-size: 0.85vw;
+}
+.writeModal_content .input .pwCheck_box {
+  width: 80%;
+}
+.writeModal_content .input .pwCheck_box input {
+  width: 100%;
+}
+.writeModal_content .input textarea {
+  width: 80%;
+  min-height: 10vw;
+  overflow-y: scroll;
+  padding: 0.3vw;
+  font-size: 0.85vw;
+  resize: none;
+  margin-left: 0vw;
+}
+.writeModal_container .btn_box {
+  width: 10vw;
+  height: 1.8vw;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+}
+.writeModal_container .btn_box p {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.writeModal_container .btn_box p:nth-child(2) {
+  background-color: #000035;
+  color: white;
+}
+
+/* readModal_background */
+.readModal_container {
+  width: 40vw;
+  height: 30vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.readModal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.readModal_content {
+  margin: 20px 0;
+}
+.readModal_content .text_box {
+  width: 100%;
+  height: 1.5vw;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1vw;
+}
+.readModal_content .text_box > p {
+  width: 16%;
+  font-size: 0.9vw;
+  font-weight: 600;
+}
+.readModal_content .text_box div {
+  width: 80%;
+  height: auto;
+  padding-left: 0.3vw;
+  font-size: 0.85vw;
+  border: 1px solid black;
+}
+.readModal_content .text_box:nth-child(2) {
+  min-height: 10vw;
+  overflow-y: none;
+}
+.readModal_content .text_box:nth-child(2) div {
+  height: 100%;
+}
+.readModal_content .text_box:nth-child(3) {
+  min-height: 5vw;
+  overflow-y: none;
+}
+.readModal_content .text_box:nth-child(3) div {
+  height: 100%;
+}
+
+/* pwModal_background */
+.pwModal_container {
+  width: 22vw;
+  height: 11vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.pwModal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pwModal_content {
+  margin: 20px 0;
+}
+.pwModal_container .pwModal_content p {
+  font-size: 1vw;
+}
+.pwModal_content .input {
+  width: 100%;
+  height: 1.5vw;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+.pwModal_content .input:nth-child(2) {
+  height: auto;
+}
+.pwModal_content .input p {
+  width: 16%;
+  font-size: 0.7vw;
+  font-weight: 600;
+}
+.pwModal_content .input input {
+  width: 80%;
+  padding-left: 0.3vw;
+  font-size: 0.85vw;
+}
+.pwModal_content .input .pwCheck_box {
+  width: 80%;
+}
+.pwModal_content .input .pwCheck_box input {
+  width: 100%;
+}
+.pwModal_content .input textarea {
+  width: 80%;
+  min-height: 10vw;
+  overflow-y: scroll;
+  padding: 0.3vw;
+  font-size: 0.85vw;
+  resize: none;
+  margin-left: 0vw;
+}
+.pwModal_container .btn_box {
+  width: 10vw;
+  height: 1.8vw;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+}
+.pwModal_container .btn_box p {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.pwModal_container .btn_box p:nth-child(2) {
+  background-color: #000035;
+  color: white;
+}
+
+/* commentModal_background */
+.commentModal_container {
+  width: 40vw;
+  height: 30vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.commentModal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.commentModal_content {
+  margin: 20px 0;
+}
+.commentModal_content .text_box {
+  width: 100%;
+  height: 1.5vw;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1vw;
+}
+.commentModal_content .text_box > p {
+  width: 16%;
+  font-size: 0.9vw;
+  font-weight: 600;
+}
+.commentModal_content .text_box div {
+  width: 80%;
+  height: auto;
+  overflow-y: scroll;
+  padding-left: 0.3vw;
+  font-size: 0.85vw;
+  border: 1px solid black;
+}
+.commentModal_content .text_box:nth-child(2) {
+  min-height: 10vw;
+  overflow-y: none;
+}
+.commentModal_content .text_box:nth-child(2) div {
+  /* height: 100%; */
+}
+.commentModal_content .input {
+  width: 100%;
+  height: 7.5vw;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1vw;
+}
+.commentModal_content .input:nth-child(2) {
+  height: auto;
+}
+.commentModal_content .input p {
+  width: 16%;
+  font-size: 0.9vw;
+  font-weight: 600;
+}
+.commentModal_content .input input {
+  width: 80%;
+  padding-left: 0.3vw;
+  font-size: 0.85vw;
+}
+.commentModal_content .input textarea {
+  width: 80%;
+  min-height: 7vw;
+  overflow-y: scroll;
+  padding: 0.3vw;
+  font-size: 0.85vw;
+  resize: none;
+  margin-left: 0vw;
+}
+.commentModal_container .btn_box {
+  width: 10vw;
+  height: 1.8vw;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+}
+.commentModal_container .btn_box p {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.commentModal_container .btn_box p:nth-child(2) {
+  background-color: #000035;
+  color: white;
+}

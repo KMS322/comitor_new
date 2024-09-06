@@ -1,0 +1,32 @@
+@media (max-width: 500px) {
+  /* .complete_s1 */
+  .complete_s1 {
+    height: 173.36vw;
+  }
+  .complete_s1 .article_container {
+    width: 70.56%;
+    height: 23.6vw;
+    margin-top: 13.08vw;
+  }
+  .complete_s1 .article_container .article {
+    width: 23.51%;
+  }
+  .complete_s1 .article_container .article img {
+    height: 70.3%;
+  }
+  .complete_s1 .article_container .article p {
+    font-size: 3.5vw;
+  }
+  .complete_s1 > p {
+    font-size: 6.07vw;
+    margin-top: 15.89vw;
+  }
+  .complete_s1 .home_btn {
+    width: 90.65%;
+    height: 16.36vw;
+    font-size: 4.67vw;
+    margin-top: 44.16vw;
+    margin-bottom: 34.11vw;
+    cursor: pointer;
+  }
+}

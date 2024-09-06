@@ -1,0 +1,145 @@
+/* adminCoupons */
+.adminCoupons {
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 10vw;
+}
+.adminCoupons .upload_btn {
+  width: 5.47vw;
+  height: 1.67vw;
+  margin-top: 1.77vw;
+  margin-left: auto;
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  cursor: pointer;
+}
+.adminCoupons .upload_btn p {
+  font-size: 0.89vw;
+  color: white;
+}
+.adminCoupons .table {
+  width: 100%;
+  height: auto;
+  margin-top: 0.73vw;
+}
+.adminCoupons .table .head_row {
+  width: 100%;
+  height: 1.82vw;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #707070;
+  border-bottom: 1px solid #707070;
+}
+.adminCoupons .table .head_row p {
+  font-size: 1.04vw;
+}
+.adminCoupons .table .content_row {
+  width: 100%;
+  height: 2.6vw;
+  display: flex;
+  align-items: center;
+}
+.adminCoupons .table .even_row {
+  background-color: #f7f7f7;
+}
+.adminCoupons .table .content_row p {
+  font-size: 0.9vw;
+  font-weight: 200;
+}
+.adminCoupons .table .row > p {
+  text-align: center;
+}
+.adminCoupons .table .row > p:nth-child(1) {
+  margin-left: 1vw;
+  width: 8%;
+  text-align: center;
+}
+.adminCoupons .table .row > p:nth-child(2) {
+  margin-left: 1.3vw;
+  width: 40%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.adminCoupons .table .row > p:nth-child(3) {
+  margin-left: 1.3vw;
+  width: 7%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.adminCoupons .table .row > p:nth-child(4) {
+  margin-left: 1.3vw;
+  width: 7%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.adminCoupons .table .row > p:nth-child(5) {
+  margin-left: 1.3vw;
+  width: 12%;
+}
+.adminCoupons .table .row > p:nth-child(6) {
+  margin-left: 1.3vw;
+  width: 12%;
+}
+.adminCoupons .table .row > p:nth-child(7) {
+  margin-left: 3vw;
+  width: 5%;
+}
+
+.adminCoupons .table .content_row .btn_box {
+  width: 5%;
+  height: 80%;
+  margin-left: 3vw;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.adminCoupons .table .content_row .btn_box p {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1vw;
+  cursor: pointer;
+}
+.adminCoupons .table .content_row:last-child .btn_box p:first-child {
+  border: none;
+}
+.adminCoupons .change_btn {
+  width: 5.47vw;
+  height: 1.67vw;
+  margin-top: 1.77vw;
+  margin-left: auto;
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  cursor: pointer;
+}
+.adminCoupons .change_btn p {
+  font-size: 0.8vw;
+  cursor: pointer;
+  color: white;
+}
+.adminCoupons .update_btn {
+  width: 5.47vw;
+  height: 1.67vw;
+  margin-top: 1.77vw;
+  margin-left: auto;
+  justify-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  cursor: pointer;
+}
+.adminCoupons .update_btn p {
+  font-size: 0.8vw;
+  cursor: pointer;
+  color: white;
+}

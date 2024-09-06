@@ -1,0 +1,214 @@
+@media (max-width: 500px) {
+  /* about_s1 */
+  .about_s1 {
+    height: 156.54vw;
+  }
+  .about_s1 > img {
+    width: 38.4%;
+    height: fit-content;
+    margin-top: 13.55vw;
+    margin-left: 7.01vw;
+  }
+  .about_s1 .article_container {
+    width: 92.99%;
+    height: 51.2%;
+    bottom: 18.06%;
+  }
+  .about_s1 .article_container .article {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: left;
+    z-index: 2;
+  }
+  .about_s1 .article_container .article .title {
+    margin: 0;
+    margin-top: 4.44vw;
+    font-size: 6.78vw;
+    line-height: 9vw;
+  }
+  .about_s1 .article_container .article .content1 {
+    margin-top: 20.79vw;
+    font-size: 3.97vw;
+  }
+  .about_s1 .article_container .article .content2 {
+    margin-top: 6.78vw;
+    font-size: 3.04vw;
+    line-height: 6vw;
+  }
+  .about_s1 .article_container img {
+    width: 62.56%;
+    height: 48.4%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  /* about_s2 */
+  .about_s2 {
+    height: 280vw;
+  }
+  .about_s2 > .title {
+    margin: 0;
+    margin-left: 7.01vw;
+    font-size: 6.78vw;
+    line-height: 10vw;
+  }
+  .about_s2 .content1 {
+    margin-top: 6.78vw;
+    margin-left: 7.01vw;
+    font-size: 3.97vw;
+  }
+  .about_s2 .content2 {
+    margin-top: 6.78vw;
+    margin-left: 7.01vw;
+    font-size: 3.04vw;
+    line-height: 6vw;
+  }
+  .about_s2 > img {
+    width: 100%;
+    height: 52.1vw;
+    margin: 0;
+    margin-top: 11.21vw;
+  }
+  .about_s2 .article {
+    width: 64%;
+    height: 152.8vw;
+    top: 110vw;
+    /* left: 24.77vw; */
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .about_s2 .article p {
+    font-size: 3.5vw;
+    line-height: 11vw;
+    letter-spacing: -0.35vw;
+  }
+  .about_s2 .article p span {
+    font-size: 7vw;
+  }
+
+  /* about_s3 */
+  .about_s3 {
+    height: 210vw;
+  }
+  .about_s3 .title {
+    font-size: 6.78vw;
+    margin-top: 34.35vw;
+  }
+  .about_s3 img {
+    width: 45.42%;
+    margin-top: 18.69vw;
+  }
+  .about_s3 .content1 {
+    font-size: 4.67vw;
+    margin-top: 15vw;
+  }
+  .about_s3 .content2 {
+    width: 85.98%;
+    margin-left: 7.01vw;
+    font-size: 3.04vw;
+    margin-top: 15vw;
+    line-height: 7vw;
+  }
+
+  /* about_s4 */
+  .about_s4 {
+    height: 155.84vw;
+  }
+  .about_s4 .article_container {
+    height: 82.31%;
+    margin: 0;
+    flex-direction: column;
+  }
+  .about_s4 .article_container img {
+    width: 100%;
+    height: 57.74%;
+  }
+  .about_s4 .article_container .article {
+    width: 100%;
+    height: 54.83%;
+    background-color: #f4f1e7;
+  }
+  .about_s4 .article_container .article > p {
+    margin-left: 7.01vw;
+    margin-top: 8.41vw;
+    font-size: 6.78vw;
+  }
+  .about_s4 .article_container .article .text_container {
+    width: 92.46%;
+    height: 45.51%;
+    margin-top: 2vw;
+    margin-left: 7.01vw;
+    position: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+  }
+  .about_s4 .article_container .article .text_container .title {
+    margin: 0;
+    font-size: 3.97vw;
+  }
+  .about_s4 .article_container .article .text_container .content {
+    margin: 0;
+    font-size: 3.04vw;
+    line-height: 5.5vw;
+    margin-top: 6vw;
+  }
+
+  /* about_s5 */
+  .about_s5 {
+    height: 178.74vw;
+  }
+  .about_s5 .article_container {
+    height: 84.71%;
+    flex-direction: column;
+    position: relative;
+  }
+  .about_s5 .article_container img {
+    order: 1;
+    width: 100%;
+    height: 48.92%;
+  }
+  .about_s5 .article_container .article {
+    order: 2;
+    width: 100%;
+    height: 57.72%;
+    position: absolute;
+    right: 0;
+    bottom: -2vw;
+    background-color: #f4f1e7;
+  }
+  .about_s5 .article_container .article > p {
+    font-size: 6.78vw;
+    margin-top: 8.41vw;
+    margin-left: 15vw;
+  }
+  .about_s5 .article_container .article .text_container {
+    width: 92.46%;
+    height: 61.5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    bottom: 14%;
+  }
+  .about_s5 .article_container .article .text_container .title {
+    font-size: 3.97vw;
+    margin: 0;
+    text-align: right;
+  }
+  .about_s5 .article_container .article .text_container .content {
+    margin: 0;
+    font-size: 3.04vw;
+    text-align: right;
+    line-height: 6vw;
+    margin-top: 7vw;
+  }
+}

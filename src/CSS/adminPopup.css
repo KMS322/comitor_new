@@ -1,0 +1,70 @@
+/* adminPopup */
+.adminPopup {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.adminPopup .btn_box {
+  width: 15vw;
+  height: 3vw;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3vw;
+}
+.adminPopup .btn_box .btn {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  cursor: pointer;
+}
+.adminPopup .btn_box .active {
+  background-color: gray;
+}
+.adminPopup .label_container label .upload_btn {
+  width: 15vw;
+  height: 3vw;
+  font-size: 1.2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  margin-top: 3vw;
+  cursor: pointer;
+}
+.adminPopup .label_container > p {
+  font-size: 1.2vw;
+  margin-top: 0.5vw;
+  text-align: right;
+}
+.adminPopup .label_container input {
+  display: none;
+}
+.adminPopup .submit_btn {
+  width: 15vw;
+  height: 3vw;
+  font-size: 1.2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  margin-top: 2vw;
+  cursor: pointer;
+}
+.adminPopup .preview_box {
+  width: 15vw;
+  height: 3vw;
+  font-size: 1.2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  margin-top: 2vw;
+  margin-bottom: 10vw;
+  cursor: pointer;
+}

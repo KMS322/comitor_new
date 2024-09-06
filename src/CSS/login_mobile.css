@@ -1,0 +1,57 @@
+@media (max-width: 510px) {
+  .login_s1 {
+    height: 212.6vw;
+  }
+  .login_s1 .section_container {
+    width: 100%;
+  }
+  .login_s1 .section_container .article_container {
+    width: 76.77%;
+    height: 46.39%;
+    margin-top: 14.96vw;
+  }
+  .login_s1 .section_container .article_container .title_box p {
+    font-size: 5.51vw;
+  }
+  .login_s1 .section_container .article_container .title_box img {
+    width: 3.35vw;
+    height: 5.91vw;
+  }
+  .login_s1 .section_container .article_container .input_box {
+    margin-top: 13vw;
+    height: 38.33%;
+  }
+  .login_s1 .section_container .article_container .input_box input {
+    height: 28.65%;
+    font-size: 3.35vw;
+    padding-left: 4.72vw;
+  }
+  .login_s1 .section_container .article_container .input_box .submit_btn {
+    font-size: 3.94vw;
+  }
+  .login_s1 .section_container .article_container .sub_box {
+    height: 4.59%;
+  }
+  .login_s1 .section_container .article_container .sub_box .auto_login_box p {
+    font-size: 3.35vw;
+  }
+  .login_s1 .section_container .article_container .sub_box .find_box p {
+    font-size: 3.35vw;
+  }
+  .login_s1 .section_container .article_container .signin_btn {
+    font-size: 3.35vw;
+    margin-top: 4.92vw;
+    margin-bottom: 2.76vw;
+  }
+  .login_s1 .section_container .article_container .kakao_btn {
+    border: 1px solid #f7e028;
+  }
+  .login_s1 .section_container .article_container .kakao_btn img {
+    width: 9.49%;
+    height: 52.73%;
+    margin-left: 20.28vw;
+  }
+  .login_s1 .section_container .article_container .kakao_btn p {
+    font-size: 3.94vw;
+  }
+}

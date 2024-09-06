@@ -1,0 +1,41 @@
+/* adminStatisticsMonth */
+.statisticsMonth {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1vw;
+}
+.statisticsMonth > p {
+  font-size: 1.5vw;
+}
+.statisticsMonth .select_box {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1vw;
+}
+.statisticsMonth .select_box {
+  font-size: 0.9vw;
+}
+.statisticsMonth button {
+  width: 7vw;
+  height: 2vw;
+  background-color: lightgray;
+  margin-top: 1vw;
+}
+.statisticsMonth .sub {
+  font-size: 1.2vw;
+  margin-top: 1vw;
+}
+.statisticsMonth .month_rank {
+  width: 28%;
+  margin: 0.5vw 0;
+}
+.statisticsMonth .month_rank p {
+  font-size: 0.9vw;
+}
+.statisticsMonth .month_rank p:nth-child(1) {
+  font-weight: 600;
+}

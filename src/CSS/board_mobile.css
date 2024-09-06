@@ -1,0 +1,204 @@
+@media (max-width: 510px) {
+  .board_container .title {
+    font-size: 3.5vw;
+  }
+  .board_container .table {
+    width: 85vw;
+  }
+  .board_container .table p {
+    font-size: 2vw;
+  }
+  .board_container .table .head_row {
+    height: 5vw;
+  }
+  .board_container .table .content_row {
+    height: 4vw;
+  }
+  .board_container .table .row p:nth-child(1) {
+    width: 7.5%;
+  }
+  .board_container .table .row p:nth-child(2) {
+    width: 40%;
+  }
+  .board_container .table .row p:nth-child(3) {
+    width: 15%;
+  }
+  .board_container .table .row p:nth-child(4) {
+    width: 11%;
+  }
+  .board_container .table .row p:nth-child(5) {
+    width: 8%;
+    font-size: 1.5vw;
+  }
+  .board_container .table .btn_box {
+    width: 10vw;
+    height: 4vw;
+    font-size: 1.5vw;
+  }
+  .writeModal_container {
+    width: 80vw;
+    height: auto;
+  }
+  .writeModal_header h2 {
+    font-size: 3.5vw;
+  }
+  .writeModal_header button {
+    font-size: 2.5vw;
+  }
+  .writeModal_content .input {
+    height: 3.5vw;
+  }
+  .writeModal_content .input p {
+    font-size: 2vw;
+    letter-spacing: -0.2vw;
+  }
+  .writeModal_content .input input {
+    font-size: 1.6vw;
+    padding-left: 1vw;
+  }
+  .writeModal_content .input textarea {
+    padding: 1vw;
+    min-height: 26vw;
+    font-size: 2vw;
+  }
+  .writeModal_content .input .pwCheck_box {
+    height: 100%;
+    position: relative;
+  }
+  .writeModal_content .input .pwCheck_box input {
+    height: 100%;
+    font-size: 1.6vw;
+    padding-left: 1vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .writeModal_content .input .pwCheck_box div {
+    font-size: 1.4vw;
+    position: absolute;
+    left: 0;
+    bottom: -3vw;
+    margin-bottom: 0vw !important;
+  }
+  .writeModal_container .btn_box {
+    width: 25vw;
+    height: 3vw;
+  }
+  .writeModal_container .btn_box p {
+    font-size: 1.7vw;
+  }
+  .pwModal_container {
+    width: 60vw;
+    height: auto;
+  }
+  .pwModal_header button {
+    font-size: 2.5vw;
+  }
+  .pwModal_content {
+    margin: 0;
+    margin-top: 1.5vw;
+  }
+  .pwModal_container .pwModal_content > p {
+    font-size: 2vw;
+  }
+  .pwModal_content .input {
+    margin-top: 3vw;
+  }
+  .pwModal_content .input p {
+    font-size: 1.7vw;
+  }
+  .pwModal_content .input:nth-child(2) {
+    height: 3vw;
+  }
+  .pwModal_content .input input {
+    font-size: 1.7vw;
+    height: 100%;
+  }
+  .pwModal_container .btn_box {
+    width: 25vw;
+    height: 3vw;
+    margin-top: 2vw;
+  }
+  .pwModal_container .btn_box p {
+    font-size: 1.7vw;
+  }
+  .readModal_container {
+    width: 80vw;
+    height: auto;
+  }
+  .readModal_container button {
+    font-size: 2.5vw;
+  }
+  .readModal_content .text_box > p {
+    font-size: 2vw;
+    letter-spacing: -0.1vw;
+  }
+  .readModal_content .text_box {
+    height: 3.2vw;
+  }
+  .readModal_content .text_box div {
+    font-size: 1.7vw;
+    padding-left: 1vw;
+  }
+  .readModal_content .text_box:nth-child(2) {
+    min-height: 30vw;
+  }
+  .readModal_content .text_box:nth-child(2) div {
+    padding: 1vw;
+  }
+  .readModal_content .text_box:nth-child(3) {
+    min-height: 12vw;
+  }
+  .readModal_content .text_box:nth-child(3) div {
+    padding: 1vw;
+  }
+  .commentModal_container {
+    width: 80vw;
+    height: auto;
+  }
+  .commentModal_container .commentModal_header h2 {
+    font-size: 3.5vw;
+  }
+  .commentModal_container .commentModal_header button {
+    font-size: 2.5vw;
+  }
+  .commentModal_container .commentModal_content .text_box {
+    height: 3.5vw;
+  }
+  .commentModal_container .commentModal_content .text_box > p {
+    font-size: 2vw;
+  }
+  .commentModal_container .commentModal_content {
+    height: auto;
+  }
+  .commentModal_content .text_box div {
+    padding-left: 1vw;
+  }
+  .commentModal_content .text_box div p {
+    font-size: 2vw;
+  }
+  .commentModal_content .text_box:nth-child(2) {
+    min-height: 26vw;
+  }
+  .commentModal_content .text_box:nth-child(2) div {
+    padding: 1vw;
+  }
+  .commentModal_content .input {
+    height: auto;
+  }
+  .commentModal_content .input p {
+    font-size: 2vw;
+  }
+  .commentModal_content .input textarea {
+    font-size: 2vw;
+    padding: 1vw;
+    min-height: 20vw;
+  }
+  .commentModal_container .btn_box {
+    width: 25vw;
+    height: 3vw;
+  }
+  .commentModal_container .btn_box p {
+    font-size: 1.7vw;
+  }
+}

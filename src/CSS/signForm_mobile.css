@@ -1,0 +1,66 @@
+@media (max-width: 510px) {
+  .signForm_s1 {
+    height: 258.86vw;
+  }
+  .signForm_s1 .section_container {
+    width: 100%;
+  }
+  .signForm_s1 .section_container .article_container {
+    width: 76.77%;
+    height: 78.33%;
+    margin-top: 14.76vw;
+  }
+  .signForm_s1 .section_container .article_container .title_box p {
+    font-size: 5.51vw;
+  }
+  .signForm_s1 .section_container .article_container .title_box img {
+    width: 2.82vw;
+    height: 5.51vw;
+  }
+  .signForm_s1 .section_container .article_container .input_container {
+    height: 87.57%;
+    margin-top: 19.49vw;
+  }
+  .signForm_s1 .section_container .article_container .input_container .input {
+    margin-bottom: 6.5vw;
+  }
+  .signForm_s1 .section_container .article_container .input_container .input p {
+    font-size: 3.54vw;
+  }
+  .signForm_s1
+    .section_container
+    .article_container
+    .input_container
+    .input
+    p
+    span {
+    font-size: 2.56vw;
+    margin-left: 2.17vw;
+  }
+  .signForm_s1
+    .section_container
+    .article_container
+    .input_container
+    .input
+    input {
+    font-size: 3.5vw;
+    padding-left: 4.72vw;
+  }
+  .signForm_s1
+    .section_container
+    .article_container
+    .input_container
+    .input_address
+    .btn_box
+    .address_btn {
+    font-size: 3.5vw;
+  }
+  .signForm_s1
+    .section_container
+    .article_container
+    .input_container
+    .submit_btn {
+    margin-top: 12.4vw;
+    font-size: 3.35vw;
+  }
+}

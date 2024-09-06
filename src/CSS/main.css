@@ -1,0 +1,199 @@
+/* main_s1 */
+.main_s1 {
+  width: 100%;
+  height: 51.46vw;
+}
+.main_s1 img {
+  width: 100%;
+  height: 100%;
+}
+
+/* main_s2 */
+.main_s2 {
+  width: 100%;
+  height: 19.48vw;
+  position: relative;
+}
+.main_s2 img {
+  width: 100%;
+  height: 100%;
+}
+.main_s2 .btn_box {
+  width: 4vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5vw;
+  color: white;
+  background-color: gray;
+  opacity: 0.4;
+}
+.main_s2 .btn_box:nth-child(3) {
+  right: 0;
+}
+
+/* main_s3 */
+.main_s3 {
+  width: 100%;
+  height: 44.8vw;
+  border: 1px solid white;
+  margin-top: 10.42vw;
+  margin-bottom: 20.84vw;
+}
+.main_s3 > p {
+  font-size: 1.46vw;
+  font-weight: 500;
+  font-family: "NotoSansKr";
+  color: #1f0053;
+  text-align: center;
+  margin-top: 7.34vw;
+}
+.main_s3 .article_container {
+  width: 62.5%;
+  height: 56.75%;
+  margin: 0 auto;
+  margin-top: 3.96vw;
+  display: flex;
+  justify-content: space-between;
+}
+.main_s3 .article_container .article {
+  width: 28.92%;
+  height: 100%;
+}
+.main_s3 .article_container .article img {
+  width: 100%;
+  height: 74.39%;
+  cursor: pointer;
+}
+.main_s3 .article_container .article p {
+  font-size: 0.94vw;
+  font-weight: 400;
+  font-family: "NotoSansKr";
+  line-height: 2vw;
+}
+.main_s3 .article_container .article p:nth-child(2) {
+  cursor: pointer;
+}
+.main_s3 .article_container .article p:nth-child(3) {
+  text-align: right;
+}
+.main_s3 .article_container .article .product_title {
+  margin-top: 1.75vw;
+  margin-bottom: 1.3vw;
+}
+
+/* main_s4 */
+.main_s4 {
+  width: 100%;
+  height: 33.54vw;
+  border: 1px solid white;
+  display: flex;
+  margin-bottom: 20.84vw;
+}
+.main_s4 img {
+  width: 41%;
+  height: 100%;
+}
+.main_s4 .article {
+  width: 59%;
+  height: 100%;
+  padding-top: 11.35vw;
+  padding-left: 8.13vw;
+}
+.main_s4 .article .title {
+  font-size: 1.56vw;
+  font-weight: 700;
+  font-family: "NotoSansKr";
+}
+.main_s4 .article .content {
+  font-size: 1.04vw;
+  font-weight: 400;
+  font-family: "NotoSansKr";
+  margin-top: 2.76vw;
+  line-height: 1.85vw;
+}
+
+/* main_s5 */
+.main_s5 {
+  width: 100%;
+  height: auto;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20.84vw;
+}
+.main_s5 > p {
+  font-size: 1.46vw;
+  font-weight: 500;
+  font-family: "NotoSansKr";
+  color: #1e0052;
+  text-align: center;
+  margin-top: 7.34vw;
+}
+.main_s5 .article_container {
+  width: 62.5%;
+  height: auto;
+  display: flex;
+  /* justify-content: space-between; */
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  margin-top: 4vw;
+}
+.main_s5 .article_container .article {
+  width: 23%;
+  height: 100%;
+  border-radius: 0.3vw;
+  box-shadow: 3px 3px 0px 0px rgba(30, 0, 82, 0.1);
+  flex: 0 0 23%;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-right: 2.5%;
+  border: 1px solid rgba(30, 0, 82, 0.1);
+}
+.main_s5 .article_container .article img {
+  width: 100%;
+}
+.main_s5 .article_container .article .comment_box {
+  width: 100%;
+  height: 3.6vw;
+  font-size: 0.8vw;
+  line-height: 1.2vw;
+  margin-top: 0.5vw;
+  overflow: hidden; /* 넘친 부분 숨기기 */
+  white-space: pre-wrap; /* 줄바꿈 처리 */
+  word-wrap: break-word; /* 단어 단위로 줄바꿈 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 표시할 줄 수 */
+  -webkit-box-orient: vertical;
+  padding-left: 0.3vw;
+}
+.main_s5 .controls {
+  width: 10vw;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3vw;
+}
+
+.main_s5 .controls button {
+  padding: 10px;
+  background-color: #000035;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.main_s5 .controls button:disabled {
+  background-color: #c0c0c0;
+  cursor: not-allowed;
+}

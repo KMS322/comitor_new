@@ -1,0 +1,55 @@
+@media (max-width: 510px) {
+  .signin_s1 {
+    height: 212.6vw;
+  }
+  .signin_s1 .section_container {
+    width: 100%;
+  }
+  .signin_s1 .section_container .article_container {
+    width: 71.65%;
+    height: 67.13%;
+    margin-top: 4.72vw;
+  }
+  .signin_s1 .section_container .article_container .title_box img:nth-child(1) {
+    width: 2.82vw;
+    height: 5.51vw;
+  }
+  .signin_s1 .section_container .article_container .title_box img:nth-child(2) {
+    width: 37.36%;
+  }
+  .signin_s1 .section_container .article_container > p:nth-child(2) {
+    font-size: 4.33vw;
+    margin-top: 14.96vw;
+    line-height: 6vw;
+  }
+  .signin_s1 .section_container .article_container .check_box {
+    margin-top: 13.39vw;
+  }
+  .signin_s1 .section_container .article_container .check_box p {
+    font-size: 3.54vw;
+    margin-left: 2.56vw;
+  }
+  .signin_s1 .section_container .article_container .check_box p span {
+    font-size: 3.14vw;
+    margin-left: 2.17vw;
+  }
+  .signin_s1 .section_container .article_container .accept_box {
+    margin-top: 5.51vw;
+  }
+  .signin_s1 .section_container .article_container .accept_box .accept img {
+    width: 3.61vw;
+    height: 2.67vw;
+  }
+  .signin_s1 .section_container .article_container .accept_box .accept p {
+    font-size: 3.14vw;
+    margin-left: 3.74vw;
+  }
+  .signin_s1 .section_container .article_container .accept_box .accept p span {
+    font-size: 2.36vw;
+    margin-left: 2.17vw;
+  }
+  .signin_s1 .section_container .article_container .submit_btn {
+    margin-top: 30.31vw;
+    font-size: 3.35vw;
+  }
+}

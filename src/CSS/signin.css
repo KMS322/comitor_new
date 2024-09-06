@@ -1,0 +1,112 @@
+/* signin_s1  */
+.signin_s1 {
+  width: 100%;
+  height: 56.25vw;
+  background-color: #e6e6e6;
+}
+.signin_s1 .section_container {
+  width: 26.51%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid white;
+}
+.signin_s1 .section_container .article_container {
+  width: 71.66%;
+  height: 67.13%;
+  margin: 0 auto;
+  margin-top: 1.25vw;
+}
+.signin_s1 .section_container .article_container .title_box {
+  width: 100%;
+  height: 4%;
+  position: relative;
+  text-align: center;
+}
+.signin_s1 .section_container .article_container .title_box img:nth-child(1) {
+  width: 0.75vw;
+  height: 1.46vw;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+.signin_s1 .section_container .article_container .title_box img:nth-child(2) {
+  width: 37.36%;
+  height: 100%;
+}
+.signin_s1 .section_container .article_container > p:nth-child(2) {
+  font-size: 1.15vw;
+  font-weight: 500;
+  color: #000035;
+  margin-top: 3.96vw;
+  line-height: 1.8vw;
+}
+.signin_s1 .section_container .article_container .check_box {
+  width: 100%;
+  height: 4.41%;
+  display: flex;
+  align-items: center;
+  margin-top: 3.54vw;
+}
+.signin_s1 .section_container .article_container .check_box img {
+  height: 100%;
+  cursor: pointer;
+}
+.signin_s1 .section_container .article_container .check_box p {
+  font-size: 0.94vw;
+  font-weight: 500;
+  color: #000035;
+  margin-left: 0.68vw;
+}
+.signin_s1 .section_container .article_container .check_box p span {
+  font-size: 0.83vw;
+  font-weight: 400;
+  color: #000035;
+  margin-left: 0.57vw;
+}
+.signin_s1 .section_container .article_container .accept_box {
+  width: 100%;
+  height: 23.72%;
+  margin-top: 1.46vw;
+}
+.signin_s1 .section_container .article_container .accept_box .accept {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+}
+.signin_s1 .section_container .article_container .accept_box .accept img {
+  width: 0.96vw;
+  margin-left: 0.36vw;
+  cursor: pointer;
+}
+.signin_s1 .section_container .article_container .accept_box .accept p {
+  font-size: 0.83vw;
+  font-weight: 400;
+  color: #919191;
+  margin-left: 1.04vw;
+}
+.signin_s1 .section_container .article_container .accept_box .accept p span {
+  font-size: 0.63vw;
+  font-weight: 400;
+  color: #919191;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 0.57vw;
+}
+.signin_s1 .section_container .article_container .submit_btn {
+  width: 100%;
+  height: 6.76%;
+  margin-top: 8.7vw;
+  border-radius: 0.4vw;
+  background-color: #000035;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.89vw;
+  font-weight: 700;
+  color: white;
+  cursor: pointer;
+}

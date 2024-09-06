@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "NotoSansKr";
+  font-style: normal;
+  font-weight: 700;
+  src: url(Noto_Sans_KR/static/NotoSansKR-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "NotoSansKr";
+  font-style: normal;
+  font-weight: 500;
+  src: url(Noto_Sans_KR/static/NotoSansKR-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "NotoSansKr";
+  font-style: normal;
+  font-weight: 400;
+  src: url(Noto_Sans_KR/static/NotoSansKR-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "GmarketSans";
+  font-style: normal;
+  font-weight: 700;
+  src: url(GmarketSansOTF/GmarketSansBold.otf) format("opentype");
+}
+@font-face {
+  font-family: "GmarketSans";
+  font-style: normal;
+  font-weight: 500;
+  src: url(GmarketSansOTF/GmarketSansMedium.otf) format("opentype");
+}
+@font-face {
+  font-family: "GmarketSans";
+  font-style: normal;
+  font-weight: 200;
+  src: url(GmarketSansOTF/GmarketSansLight.otf) format("opentype");
+}

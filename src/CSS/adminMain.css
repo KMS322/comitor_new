@@ -1,0 +1,24 @@
+/* adminMain */
+.adminMain {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.adminMain p {
+  width: 30%;
+  height: 4vw;
+  font-size: 1.8vw;
+  border: 1px solid black;
+  border-radius: 0.4vw;
+  margin-top: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.adminMain p:last-child {
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}

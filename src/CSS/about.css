@@ -1,0 +1,269 @@
+/* about_s1 */
+.about_s1 {
+  width: 100%;
+  height: 51.46vw;
+  border: 1px solid white;
+  position: relative;
+}
+.about_s1 > img {
+  width: 12.08%;
+  height: 11.44%;
+  margin-left: 18.75vw;
+  margin-top: 6.82vw;
+}
+.about_s1 .article_container {
+  width: 76.61%;
+  height: 55.57%;
+  position: absolute;
+  bottom: 3.7%;
+  right: 0;
+  display: flex;
+}
+.about_s1 .article_container .article {
+  width: 44%;
+  height: 100%;
+  text-align: right;
+}
+.about_s1 .article_container .article .title {
+  font-size: 2.61vw;
+  font-weight: 700;
+  font-family: "GmarketSans";
+  text-align: left;
+  margin-top: 2.6vw;
+  margin-left: 40%;
+  line-height: 3.5vw;
+}
+.about_s1 .article_container .article .title span {
+  color: #ed202d;
+}
+.about_s1 .article_container .article .content1 {
+  font-size: 1.77vw;
+  font-weight: 700;
+  font-family: "GmarketSans";
+  margin-top: 4vw;
+  margin-right: 10.9vw;
+}
+.about_s1 .article_container .article .content2 {
+  font-size: 1.15vw;
+  font-weight: 400;
+  font-family: "NotoSansKr";
+  color: #000035;
+  letter-spacing: -0.01vw;
+  margin-top: 2.8vw;
+  margin-right: 2vw;
+  line-height: 2vw;
+}
+.about_s1 .article_container img {
+  width: 56%;
+  height: 100%;
+}
+
+/* about_s2 */
+.about_s2 {
+  width: 100%;
+  height: 56.25vw;
+  border: 1px solid white;
+  position: relative;
+}
+.about_s2 > .title {
+  font-size: 2.61vw;
+  font-weight: 700;
+  font-family: "GmarketSans";
+  margin-top: 12.66vw;
+  margin-left: 18.75vw;
+  line-height: 3.5vw;
+}
+.about_s2 > .title span {
+  color: #ed202d;
+}
+.about_s2 .content1 {
+  font-size: 1.77vw;
+  font-weight: 700;
+  font-family: "GmarketSans";
+  margin-top: 3.39vw;
+  margin-left: 18.75vw;
+}
+.about_s2 .content2 {
+  font-size: 1.15vw;
+  font-weight: 400;
+  font-family: "NotoSansKr";
+  color: #000035;
+  margin-top: 2.6vw;
+  margin-left: 18.75vw;
+  line-height: 1.8vw;
+  letter-spacing: -0.01vw;
+}
+.about_s2 > img {
+  width: 81.25%;
+  height: 26.48%;
+  margin-top: 2.08vw;
+  margin-left: 18.75vw;
+  z-index: 1;
+}
+.about_s2 .article {
+  width: 17%;
+  height: 51%;
+  background-color: rgba(118, 77, 153, 0.82);
+  position: absolute;
+  top: 24vw;
+  right: 18.75%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about_s2 .article p {
+  font-size: 0.78vw;
+  color: white;
+  font-weight: 400;
+  line-height: 2vw;
+  letter-spacing: -0.09vw;
+  margin-right: 3vw;
+}
+.about_s2 .article p span {
+  font-size: 1.56vw;
+}
+
+/* about_s3 */
+.about_s3 {
+  width: 100%;
+  height: 61vw;
+  border: 1px solid white;
+  text-align: center;
+  margin-bottom: 5.2vw;
+}
+.about_s3 .title {
+  font-size: 2.6vw;
+  font-weight: 700;
+  font-family: "GmarketSans";
+  color: #000035;
+  margin-top: 7.5vw;
+}
+.about_s3 img {
+  width: 17.76%;
+  margin-top: 6vw;
+}
+.about_s3 .content1 {
+  font-size: 1.77vw;
+  font-weight: 400;
+  font-family: "GmarketSans";
+  color: #1f0053;
+  margin-top: 9.3vw;
+}
+.about_s3 .content2 {
+  font-size: 1.15vw;
+  font-weight: 400;
+  font-family: "NotoSansKr";
+  color: #000035;
+  margin-top: 5.1vw;
+  line-height: 2.25vw;
+}
+
+/* about_s4 */
+.about_s4 {
+  width: 100%;
+  height: 50.11vw;
+  border: 1px solid white;
+}
+.about_s4 .article_container {
+  width: 100%;
+  height: 65.8%;
+  border: 1px solid white;
+  margin-top: 8.02vw;
+  display: flex;
+}
+.about_s4 .article_container img {
+  width: 47.4%;
+  height: 100%;
+}
+.about_s4 .article_container .article {
+  width: 52.6%;
+  height: 100%;
+  position: relative;
+}
+.about_s4 .article_container .article > p {
+  font-size: 2.6vw;
+  font-weight: 700;
+  font-family: "GmarketSans";
+  color: #000035;
+  margin-top: 4.22vw;
+  margin-left: 9.38vw;
+}
+.about_s4 .article_container .article .text_container {
+  width: 100%;
+  height: 49.76%;
+  background-color: #f4f1e7;
+  border: 1px solid #f4f1e7;
+  position: absolute;
+  bottom: 0;
+}
+.about_s4 .article_container .article .text_container .title {
+  font-size: 1.3vw;
+  font-weight: 700;
+  font-family: "NotoSansKr";
+  color: #000035;
+  margin-top: 3.85vw;
+  margin-left: 9.38vw;
+}
+.about_s4 .article_container .article .text_container .content {
+  font-size: 0.94vw;
+  font-weight: 400;
+  font-family: "NotoSansKr";
+  color: #000035;
+  margin-top: 1.56vw;
+  margin-left: 9.38vw;
+  line-height: 1.8vw;
+}
+
+/* about_s5 */
+.about_s5 {
+  width: 100%;
+  height: 44.43vw;
+  border: 1px solid white;
+}
+.about_s5 .article_container {
+  width: 100%;
+  height: 74.21%;
+  display: flex;
+}
+.about_s5 .article_container .article {
+  width: 52.66%;
+  height: 100%;
+  position: relative;
+}
+.about_s5 .article_container .article > p {
+  font-size: 2.6vw;
+  font-weight: 700;
+  font-family: "GmarketSans";
+  color: #000035;
+  margin-top: 6.51vw;
+  margin-left: 18.75vw;
+}
+.about_s5 .article_container .article .text_container {
+  width: 100%;
+  height: 62.4%;
+  position: absolute;
+  bottom: 0;
+  background-color: #f4f1e7;
+}
+.about_s5 .article_container .article .text_container .title {
+  font-size: 1.3vw;
+  font-weight: 700;
+  font-family: "NotoSansKr";
+  color: #000035;
+  margin-top: 3.96vw;
+  margin-left: 18.75vw;
+}
+.about_s5 .article_container .article .text_container .content {
+  font-size: 0.94vw;
+  font-weight: 400;
+  font-family: "NotoSansKr";
+  color: #000035;
+  margin-top: 1.82vw;
+  margin-left: 18.75vw;
+  line-height: 1.8vw;
+}
+.about_s5 .article_container img {
+  width: 47.34%;
+  height: 100%;
+}

@@ -1,0 +1,341 @@
+@media (max-width: 500px) {
+  /* shopDetail_s1 */
+  .shopDetail_s1 {
+    height: 271.03vw;
+  }
+  .shopDetail_s1 .section_container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .shopDetail_s1 .section_container > img {
+    width: 75.93%;
+    height: 29.91%;
+    margin-top: 16.36vw;
+  }
+  .shopDetail_s1 .section_container .article {
+    width: 100%;
+    height: 60.52%;
+    margin-top: 9.58vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .shopDetail_s1 .section_container .article > p:nth-child(1) {
+    order: 1;
+    width: 30.84%;
+    height: 5.7%;
+    font-size: 3.97vw;
+  }
+  .shopDetail_s1 .section_container .article > p:nth-child(3) {
+    order: 2;
+    width: 30.84%;
+    height: 4.13%;
+    font-size: 2.57vw;
+    margin-top: 0;
+  }
+  .shopDetail_s1 .section_container .article > p:nth-child(2) {
+    order: 3;
+    width: 100%;
+    height: 13.25%;
+    text-align: right;
+    padding-right: 4.67vw;
+    background-color: #f1f0f5;
+    margin-top: 23.6vw;
+    font-size: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    line-height: 7vw;
+  }
+  .shopDetail_s1 .section_container .article > p:nth-child(4) {
+    order: 4;
+    width: 100%;
+    text-align: right;
+    padding-right: 4.67vw;
+    font-size: 4.67vw;
+    margin-top: 11.68vw;
+  }
+  .shopDetail_s1 .section_container .article > p:nth-child(4) span {
+    font-size: 3.74vw;
+    margin-right: 5.37vw;
+  }
+  .shopDetail_s1 .section_container .article .count_box {
+    width: 100%;
+    height: 4.7%;
+    order: 5;
+    margin-top: 4.44vw;
+    padding-right: 4.67vw;
+    padding-left: 4.67vw;
+  }
+  .shopDetail_s1 .section_container .article .count_box p {
+    font-size: 4.67vw;
+  }
+  .shopDetail_s1 .section_container .article .count_box .count {
+    width: 30.14%;
+  }
+  .shopDetail_s1
+    .section_container
+    .article
+    .count_box
+    .count
+    div:nth-child(1) {
+    font-size: 2.57vw;
+  }
+  .shopDetail_s1
+    .section_container
+    .article
+    .count_box
+    .count
+    div:nth-child(1)
+    img {
+    width: 3vw;
+    height: fit-content;
+  }
+  .shopDetail_s1
+    .section_container
+    .article
+    .count_box
+    .count
+    div:nth-child(2) {
+    font-size: 2.57vw;
+  }
+  .shopDetail_s1
+    .section_container
+    .article
+    .count_box
+    .count
+    div:nth-child(3)
+    img {
+    width: 3vw;
+    height: fit-content;
+  }
+  .shopDetail_s1
+    .section_container
+    .article
+    .count_box
+    .count
+    div:nth-child(3) {
+    font-size: 2.57vw;
+  }
+  .shopDetail_s1 .section_container .article .line {
+    order: 6;
+    margin-top: 4.67vw;
+  }
+  .shopDetail_s1 .section_container .article .total_price {
+    order: 7;
+    width: 100%;
+    padding-left: 4.67vw;
+    padding-right: 4.67vw;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18.22vw;
+  }
+  .shopDetail_s1 .section_container .article .total_price p:nth-child(1) {
+    font-size: 4.67vw;
+    font-weight: 500;
+    color: #919191;
+  }
+  .shopDetail_s1 .section_container .article .total_price p:nth-child(2) {
+    font-size: 7.01vw;
+    font-weight: 500;
+    color: #000035;
+  }
+  .shopDetail_s1 .section_container .article p:nth-child(11) {
+    order: 8;
+    width: 100%;
+    text-align: right;
+    padding-right: 4.67vw;
+    font-size: 3.5vw;
+    font-weight: 500;
+    color: #919191;
+  }
+  .shopDetail_s1 .section_container .article .btn_box {
+    order: 9;
+    height: 6.7%;
+    margin-top: 6.7vw;
+  }
+  .shopDetail_s1 .section_container .article .btn_box .btn {
+    font-size: 3.97vw;
+  }
+  .shopDetail_s1 .section_container .article .like_box {
+    order: 10;
+    width: 23.83%;
+    height: 5.56%;
+    margin-left: 76.17%;
+    margin-top: 5.37vw;
+  }
+  .shopDetail_s1 .section_container .article .like_box img {
+    width: 19.74%;
+    margin-left: 4.67vw;
+  }
+  .shopDetail_s1 .section_container .article .like_box p {
+    font-size: 2.8vw;
+    margin-left: 2.5vw;
+  }
+
+  /* shopDetail_s2 */
+  .shopDetail_s2 {
+    height: auto;
+  }
+  .shopDetail_s2 .section_container {
+    width: 100%;
+    height: 100%;
+  }
+  .shopDetail_s2 .section_container > p {
+    font-size: 5.84vw;
+    margin-left: 4.67vw;
+    margin-top: 43.46vw;
+  }
+  .shopDetail_s2 .section_container > p span {
+    font-size: 2.57vw;
+  }
+  .shopDetail_s2 .section_container .img_box {
+    margin-top: 5.14vw;
+    height: 66.82vw;
+  }
+  .shopDetail_s2 .section_container .more_btn {
+    width: 42.06%;
+    height: 10.51vw;
+    margin-top: 14.95vw;
+    margin-bottom: 50vw;
+  }
+  .shopDetail_s2 .section_container .more_btn p {
+    font-size: 2.8vw;
+    margin-left: 9vw;
+  }
+  .shopDetail_s2 .section_container .more_btn > img {
+    width: 3.5vw;
+    height: 2.1vw;
+  }
+
+  /* shopDetail_s3 */
+  .shopDetail_s3 {
+    height: auto;
+  }
+  .shopDetail_s3 .section_container {
+    width: 100%;
+  }
+  .shopDetail_s3 .section_container > p {
+    font-size: 5.84vw;
+    margin-top: 0vw;
+    margin-left: 4.67vw;
+  }
+  .shopDetail_s3 .section_container .row_head {
+    height: 14.95vw;
+    padding-left: 4.67vw;
+  }
+  .shopDetail_s3 .section_container .row_head > p {
+    font-size: 2.8vw;
+    margin-right: 7.71vw;
+  }
+  .shopDetail_s3 .section_container .row_content {
+    height: 96.03vw;
+    padding-left: 4.67vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .shopDetail_s3 .section_container .row_content .point_box {
+    order: 1;
+    width: 30%;
+    height: 4.21vw;
+    margin-top: 7.71vw;
+  }
+  .shopDetail_s3 .section_container .row_content .point_box img {
+    width: 22.66vw;
+  }
+  .shopDetail_s3 .section_container .row_content .point_box p {
+    font-size: 2.8vw;
+  }
+  .shopDetail_s3 .section_container .row_content .img_box {
+    order: 2;
+    margin-top: 7.71vw;
+    margin-left: 5.84vw;
+  }
+  .shopDetail_s3 .section_container .row_content .img_box img {
+    width: 37.62vw;
+    height: 34.11vw;
+  }
+  .shopDetail_s3 .section_container .row_content > p {
+    order: 3;
+    font-size: 3.04vw;
+    margin-top: 16.12vw;
+    margin-right: 4.67vw;
+    letter-spacing: -0.3vw;
+  }
+  .shopDetail_s3 .section_container .row_content .sub_box {
+    order: 4;
+    margin-top: 7.71vw;
+    margin-left: 4.67vw;
+    width: 78.51%;
+    height: 3.97vw;
+  }
+  .shopDetail_s3 .section_container .row_content .sub_box .sub_up {
+    width: 30.06%;
+  }
+  .shopDetail_s3 .section_container .row_content .sub_box .sub_up img {
+    width: 4.21vw;
+  }
+  .shopDetail_s3 .section_container .row_content .sub_box .sub_up p {
+    font-size: 2.34vw;
+  }
+  .shopDetail_s3 .section_container .row_content .sub_box .sub_down {
+    width: 32.44%;
+  }
+  .shopDetail_s3 .section_container .row_content .sub_box .sub_down img {
+    width: 4.21vw;
+  }
+  .shopDetail_s3 .section_container .row_content .sub_box .sub_down p {
+    font-size: 2.34vw;
+  }
+  .shopDetail_s3 .section_container .row_content .sub_box .sub_comment {
+    width: 21.26%;
+  }
+  .shopDetail_s3 .section_container .row_content .sub_box .sub_comment p {
+    font-size: 2.34vw;
+  }
+  .shopDetail_s3 .section_container .row_content .sub_box .sub_comment img {
+    width: 3.5vw;
+  }
+  .shopDetail_s3 .section_container .page_num {
+    margin-top: 14.25vw;
+  }
+  .shopDetail_s3 .section_container .page_num p {
+    font-size: 4.67vw;
+  }
+
+  /* shopDetail_s4 */
+  .shopDetail_s4 {
+    height: 211.21vw;
+  }
+  .shopDetail_s4 .section_container {
+    width: 90.89%;
+    margin-top: 22.66vw;
+  }
+  .shopDetail_s4 .section_container .input_box:nth-child(1) {
+    height: 32.41%;
+  }
+  .shopDetail_s4 .section_container .input_box:nth-child(1) p:nth-child(1) {
+    height: 17.06%;
+  }
+  .shopDetail_s4 .section_container .input_box:nth-child(1) p:nth-child(2) {
+    height: 82.94%;
+  }
+  .shopDetail_s4 .section_container .input_box:nth-child(2) {
+    margin-top: 23.36vw;
+    mask-border: 42.29;
+  }
+  .shopDetail_s4 .section_container .input_box:nth-child(2) p:nth-child(1) {
+    height: 20.66%;
+  }
+  .shopDetail_s4 .section_container .input_box:nth-child(2) p:nth-child(2) {
+    height: 79.34%;
+  }
+  .shopDetail_s4 .section_container .input_box:nth-child(2) {
+    height: 26.77%;
+  }
+  .shopDetail_s4 .section_container .input_box p:nth-child(1) {
+    font-size: 3.5vw;
+  }
+}

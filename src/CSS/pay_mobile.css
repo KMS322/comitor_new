@@ -1,0 +1,262 @@
+@media (max-width: 500px) {
+  /* .pay_s1 */
+  .pay_s1 {
+    height: 57.94vw;
+  }
+  .pay_s1 .article_container {
+    width: 70.56%;
+    height: 40.73%;
+    margin-top: 13.08vw;
+  }
+  .pay_s1 .article_container .article {
+    width: 23.51%;
+  }
+  .pay_s1 .article_container .article img {
+    height: 70.3%;
+  }
+  .pay_s1 .article_container .article p {
+    font-size: 3.5vw;
+  }
+
+  /* .pay_s2 */
+  .pay_s2 {
+    height: 161.92vw;
+  }
+  .pay_s2 .section_container {
+    width: 100%;
+  }
+  .pay_s2 .section_container p {
+    font-size: 5.37vw;
+    margin-left: 4.67vw;
+  }
+  .pay_s2 .section_container .article_container {
+    height: 71%;
+    margin-top: 5.37vw;
+    margin-bottom: 35.98vw;
+    border: none;
+    border-top: 2px solid #000035;
+    border-bottom: 1px solid #000035;
+  }
+  .pay_s2 .section_container .article_container .row .address_box input {
+    width: 100%;
+    margin-left: 1vw;
+  }
+  .pay_s2 .section_container .article_container .row:nth-child(1) {
+    height: 16.46%;
+  }
+  .pay_s2 .section_container .article_container .row:nth-child(2) {
+    height: 23.47%;
+  }
+  .pay_s2 .section_container .article_container .row:nth-child(3) {
+    height: 36.6%;
+  }
+  .pay_s2 .section_container .article_container .row:nth-child(4) {
+    height: 23.47%;
+  }
+  .pay_s2 .section_container .article_container .row .row_head {
+    width: 32.48%;
+    font-size: 3.97vw;
+    justify-content: center;
+    padding: 0;
+  }
+  .pay_s2 .section_container .article_container .row .row_content {
+    width: 67.52%;
+    font-size: 3.97vw;
+    justify-content: flex-end;
+    text-align: right;
+    padding-right: 4.67vw;
+  }
+  .pay_s2 .section_container .article_container .row .row_content input {
+    font-size: 3vw;
+  }
+  .pay_s2 .section_container .article_container .row:nth-child(1) .row_content {
+    padding: 0;
+  }
+  .pay_s2 .section_container .article_container .row #mobile {
+    display: flex !important;
+    justify-content: flex-end;
+    text-align: right;
+    padding-right: 4.67vw;
+  }
+  .pay_s2
+    .section_container
+    .article_container
+    .row
+    .row_content
+    .check_box:nth-child(1) {
+    width: 40.83%;
+  }
+  .pay_s2
+    .section_container
+    .article_container
+    .row
+    .row_content
+    .check_box:nth-child(2) {
+    width: 37.37%;
+    margin-left: 7vw;
+    margin-right: 3vw;
+  }
+  .pay_s2
+    .section_container
+    .article_container
+    .row
+    .row_content
+    .check_box
+    img {
+    width: 4.91vw;
+    height: 4.91vw;
+  }
+  .pay_s2 .section_container .article_container .row .row_content .check_box p {
+    font-size: 3.97vw;
+    margin: 0;
+  }
+  .pay_s2 .section_container .article_container .row .row_content select {
+    width: 100%;
+    height: 25.93%;
+    margin-left: 1vw;
+    font-size: 3vw;
+  }
+
+  /* .pay_s3 */
+  .pay_s3 {
+    height: auto;
+  }
+  .pay_s3 .section_container {
+    width: 100%;
+  }
+  .pay_s3 .section_container p {
+    font-size: 5.37vw;
+    margin-left: 4.67vw;
+  }
+  .pay_s3 .section_container .article_container {
+    margin-top: 10.51vw;
+  }
+  .pay_s3 .section_container .article_container .row_product {
+    width: 100%;
+    height: 21.73vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid #000035;
+  }
+  .pay_s3 .section_container .article_container .row_product p {
+    font-size: 3.04vw;
+    font-weight: 400;
+    color: #000035;
+    margin-left: 4.67vw;
+    line-height: 7vw;
+  }
+  .pay_s3 .section_container .article_container .row_product img {
+    width: 16.36vw;
+    height: 16.36vw;
+    margin-right: 4.67vw;
+  }
+  .pay_s3 .section_container .article_container .row_head {
+    width: 100%;
+    height: 16.12vw;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-top: 2px solid #000035;
+    border-bottom: 1px solid #000035;
+  }
+  .pay_s3 .section_container .article_container .row_head > p {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5vw;
+    font-weight: 700;
+    color: #000035;
+    margin: 0;
+    border: none;
+  }
+  .pay_s3 .section_container .article_container .row_head p:nth-child(1) {
+    width: 25.7%;
+  }
+  .pay_s3 .section_container .article_container .row_head p:nth-child(2) {
+    width: 20.56%;
+  }
+  .pay_s3 .section_container .article_container .row_head p:nth-child(3) {
+    width: 27.8%;
+  }
+  .pay_s3 .section_container .article_container .row_head p:nth-child(4) {
+    width: 19.39%;
+  }
+  .pay_s3 .section_container .article_container .row_content {
+    width: 100%;
+    height: 16.12vw;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-bottom: 1px solid #000035;
+  }
+  .pay_s3 .section_container .article_container .row_content > p {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8vw;
+    font-weight: 400;
+    color: #000035;
+    margin: 0;
+    border: none;
+  }
+  .pay_s3 .section_container .article_container .row_content p:nth-child(1) {
+    width: 25.7%;
+  }
+  .pay_s3 .section_container .article_container .row_content p:nth-child(2) {
+    width: 20.56%;
+  }
+  .pay_s3 .section_container .article_container .row_content p:nth-child(3) {
+    width: 27.8%;
+  }
+  .pay_s3 .section_container .article_container .row_content p:nth-child(4) {
+    width: 19.39%;
+  }
+  .pay_s3 .section_container .coupon_box {
+    width: 30%;
+    padding-right: 1vw;
+  }
+  .pay_s3 .section_container .coupon_box p {
+    font-size: 4.5vw;
+    margin: 0;
+  }
+  .pay_s3 .section_container .coupon_box p span {
+    font-size: 6vw;
+  }
+  .pay_s3 .section_container .coupon_box p .empty {
+    font-size: 4.5vw;
+  }
+  .pay_s3 .section_container .sale_price_box {
+    width: 30%;
+    padding-right: 1vw;
+  }
+  .pay_s3 .section_container .sale_price_box p {
+    font-size: 4.5vw;
+  }
+  .pay_s3 .section_container .pay_btn {
+    width: 90.65%;
+    height: 16.36vw;
+    font-size: 4.67vw;
+    margin-top: 8.88vw;
+  }
+  .pay_s3 .section_container .space {
+    height: 33.88vw;
+  }
+  .pay_s3 .payModal_container {
+    width: 60vw;
+    height: 40vw;
+  }
+  .pay_s3 .payModal_container button {
+    font-size: 2.4vw;
+  }
+  .pay_s3 .payModal_container p {
+    font-size: 3vw;
+  }
+  .pay_s3 .payModal_content div {
+    width: 60%;
+    height: 5vw;
+    font-size: 2vw;
+  }
+}

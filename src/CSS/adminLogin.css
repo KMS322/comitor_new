@@ -1,0 +1,53 @@
+/* adminLogin */
+.adminLogin {
+  width: 100%;
+  height: 41vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.adminLogin > p {
+  font-size: 2.5vw;
+  font-weight: 700;
+  margin-top: 8.96vw;
+}
+.adminLogin .input_box {
+  width: 26.4%;
+  height: 6.51vw;
+  margin-top: 4.38vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.adminLogin .input_box input {
+  width: 100%;
+  height: 44%;
+  font-size: 1.41vw;
+  font-family: "gothic";
+  padding-left: 0.78vw;
+}
+.adminLogin .text_box {
+  width: 26.4%;
+  margin: 0 auto;
+  margin-top: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.adminLogin .text_box p {
+  font-size: 1vw;
+  margin-left: 1vw;
+  cursor: pointer;
+}
+.adminLogin .btn {
+  width: 26.4%;
+  height: 3.28vw;
+  background-color: black;
+  margin-top: 2vw;
+  font-size: 1.41vw;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

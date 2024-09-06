@@ -1,0 +1,169 @@
+/* signForm_s1 */
+.signForm_s1 {
+  width: 100%;
+  height: auto;
+}
+.signForm_s1 .section_container {
+  width: 26.51%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid white;
+}
+.signForm_s1 .section_container .article_container {
+  width: 76.77%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 3.91vw;
+}
+.signForm_s1 .section_container .article_container .title_box {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+.signForm_s1 .section_container .article_container .title_box img {
+  width: 0.75vw;
+  height: 1.46vw;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  cursor: pointer;
+}
+.signForm_s1 .section_container .article_container .title_box p {
+  font-size: 1.46vw;
+  font-weight: 500;
+  text-align: center;
+  color: #000035;
+}
+.signForm_s1 .section_container .article_container .input_container {
+  width: 100%;
+  height: auto;
+  margin-top: 5.16vw;
+}
+.signForm_s1 .section_container .article_container .input_container .input {
+  width: 100%;
+  height: 4.62vw;
+  margin-bottom: 1.72vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.signForm_s1 .section_container .article_container .input_container .input p {
+  font-size: 0.94vw;
+  font-weight: 400;
+  color: #000035;
+}
+.signForm_s1
+  .section_container
+  .article_container
+  .input_container
+  .input
+  p
+  span {
+  font-size: 0.68vw;
+  font-weight: 400;
+  color: #919191;
+  margin-left: 0.57vw;
+}
+.signForm_s1
+  .section_container
+  .article_container
+  .input_container
+  .input
+  input {
+  width: 100%;
+  height: 56.32%;
+  border: 1px solid #919191;
+  font-size: 0.89vw;
+  font-weight: 400;
+  color: #919191;
+  padding-left: 1vw;
+}
+.signForm_s1
+  .section_container
+  .article_container
+  .input_container
+  .input_address
+  .btn_box {
+  width: 100%;
+  height: 56.32%;
+  display: flex;
+  position: relative;
+}
+.signForm_s1
+  .section_container
+  .article_container
+  .input_container
+  .input_address
+  .btn_box
+  input {
+  width: 65%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.signForm_s1
+  .section_container
+  .article_container
+  .input_container
+  .input_address
+  .btn_box
+  .checked_btn {
+  width: 35.9%;
+  height: 100%;
+  font-size: 0.89vw;
+  font-weight: 400;
+  color: white;
+  background-color: #000035;
+  border-radius: 0.3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.signForm_s1
+  .section_container
+  .article_container
+  .input_container
+  .input_address
+  .btn_box
+  .address_btn {
+  width: 35.9%;
+  height: 100%;
+  font-size: 0.89vw;
+  font-weight: 400;
+  color: white;
+  background-color: #000035;
+  border-radius: 0.3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+.signForm_s1
+  .section_container
+  .article_container
+  .input_container
+  .submit_btn {
+  width: 100%;
+  height: 2.54vw;
+  font-size: 0.89vw;
+  font-weight: 400;
+  color: white;
+  background-color: #000035;
+  border-radius: 0.3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3.28vw;
+  margin-bottom: 10vw;
+  cursor: pointer;
+}
