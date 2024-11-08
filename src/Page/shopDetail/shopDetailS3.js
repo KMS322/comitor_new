@@ -8,7 +8,6 @@ const ShopDetailS3 = ({ productCode }) => {
   const [uniqueReviews, setUniqueReviews] = useState([]);
   const [sort, setSort] = useState(true);
   const [sortedReviews, setSortedReviews] = useState([]);
-  console.log("uniqueReviews : ", uniqueReviews);
   useEffect(() => {
     if (sort) {
       setSortedReviews(

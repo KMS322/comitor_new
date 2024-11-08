@@ -66,7 +66,12 @@ const Header = () => {
           <img src={"/images/header_icon_cart.png"} alt="" />
           <p
             onClick={() => {
-              goPage("/cart");
+              if (me) {
+                goPage("/cart");
+              } else {
+                alert("로그인이 필요합니다.");
+                goPage("/login");
+              }
             }}
           >
             장바구니
@@ -76,7 +81,12 @@ const Header = () => {
           <img src={"/images/header_icon_mypage.png"} alt="" />
           <p
             onClick={() => {
-              goPage("/mypage");
+              if (me) {
+                goPage("/mypage");
+              } else {
+                alert("로그인이 필요합니다.");
+                goPage("/login");
+              }
             }}
           >
             마이페이지

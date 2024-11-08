@@ -34,21 +34,18 @@ const LoginContent = () => {
     [user_id, user_pw]
   );
 
-  const kakao_key = "b6977866e6c277d06be9e176a7eb4f53"; // 카카오 클라이언트 ID 설정
-  const redirect_uri_kakao = "http://localhost:3060/auth/kakao"; // 카카오 리다이렉트 URI 설정
-
-  const naver_key = "I29zGq7rrwlCWpGwNe45"; // 네이버 클라이언트 ID 설정
-  const redirect_uri_naver = "http://localhost:3000/auth/naver"; // 네이버 리다이렉트 URI 설정
-
-  const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${kakao_key}&redirect_uri=${redirect_uri_kakao}&response_type=code`;
-  const naverURL = `https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=${naver_key}&redirect_uri=${redirect_uri_naver}&state=STATE_STRING`;
-
   const kakaoLogin = () => {
-    window.location.href = kakaoURL;
+    window.location.href = "http://localhost:3060/sns/kakao";
   };
+
   const naverLogin = () => {
-    window.location.href = naverURL;
+    window.location.href = "http://localhost:3060/sns/naver";
   };
+
+  const googleLogin = () => {
+    window.location.href = "http://localhost:3060/sns/google";
+  };
+
   return (
     <div className="login_s1">
       <div className="section_container">
@@ -118,6 +115,16 @@ const LoginContent = () => {
               }}
             >
               네이버 로그인
+            </p>
+          </div>
+          <div className="kakao_btn">
+            <img src="/images/login/kakao.png" alt="" />
+            <p
+              onClick={() => {
+                googleLogin();
+              }}
+            >
+              구글 로그인
             </p>
           </div>
         </div>

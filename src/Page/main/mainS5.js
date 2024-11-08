@@ -9,7 +9,6 @@ const MainS5 = () => {
   const [uniqueReviews, setUniqueReviews] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
   const reviewsToShow = 4;
-  console.log("uniqueReviews : ", uniqueReviews);
 
   useEffect(() => {
     dispatch({

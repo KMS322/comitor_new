@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const { User } = require("../models");
 const { isLoggedIn, isNotLoggedIn } = require("./middlewares");
+const { Op } = require("sequelize");
 const router = express.Router();
 
 router.get("/", async (req, res, next) => {
@@ -178,6 +179,23 @@ router.post("/changeAddress", isLoggedIn, async (req, res, next) => {
   } catch (error) {
     console.error(error);
     next(error);
+  }
+});
+
+router.get("/loadUsers", async (req, res, next) => {
+  try {
+    const allUsers = await User.findAll({
+      attributes: { exclude: ["user_pw"] },
+      where: {
+        user_id: {
+          [Op.ne]: "admin",
+        },
+      },
+    });
+    res.status(200).json(allUsers);
+  } catch (e) {
+    console.error(e);
+    next(e);
   }
 });
 

@@ -63,6 +63,13 @@ const AdminMain = () => {
         </p>
         <p
           onClick={() => {
+            navigate("/adminUsers", { state: { me } });
+          }}
+        >
+          유저 목록
+        </p>
+        <p
+          onClick={() => {
             navigate("/adminStatistics", { state: { me } });
           }}
         >

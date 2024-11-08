@@ -2,16 +2,44 @@ import "../../CSS/mypage.css";
 import "../../CSS/mypage_mobile.css";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { LOAD_COUPON_REQUEST } from "../../reducers/coupon";
-const MypageS5 = () => {
+import {
+  LOAD_COUPON_LISTS_REQUEST,
+  LOAD_COUPON_REQUEST,
+} from "../../reducers/coupon";
+const MypageS5 = ({ userId }) => {
   const dispatch = useDispatch();
-  const { coupons } = useSelector((state) => state.coupon);
+  const { couponLists, coupons } = useSelector((state) => state.coupon);
 
+  useEffect(() => {
+    dispatch({
+      type: LOAD_COUPON_LISTS_REQUEST,
+      data: { userId },
+    });
+  }, [dispatch]);
   useEffect(() => {
     dispatch({
       type: LOAD_COUPON_REQUEST,
     });
   }, [dispatch]);
+  const removeDuplicatesById = (lists) => {
+    if (!lists || !Array.isArray(lists)) {
+      return [];
+    }
+    const uniqueLists = [];
+    const existingIds = [];
+
+    for (const list of lists) {
+      if (list && list.id && !existingIds.includes(list.id)) {
+        uniqueLists.push(list);
+        existingIds.push(list.id);
+      }
+    }
+
+    return uniqueLists;
+  };
+  const uniqueLists = removeDuplicatesById(couponLists);
+  const uniqueCoupons = removeDuplicatesById(coupons);
+
   return (
     <div className="mypage_s5">
       <div id="pc" className="section_container">
@@ -23,29 +51,32 @@ const MypageS5 = () => {
             <p>할인혜택</p>
             <p></p>
           </div>
-          <div className="content">
-            <img />
-            <div className="item_box">
-              <img
-                src={`/images/coupon/${
-                  coupons.length > 0 && coupons[0].coupon_imgUrl
-                }`}
-                alt=""
-              />
-              <p>{coupons.length > 0 && coupons[0].coupon_name}</p>
-            </div>
-            <div className="price_box">
-              <p>
-                {coupons.length > 0 && coupons[0].coupon_percent === 0
-                  ? `${
-                      coupons.length > 0 &&
-                      coupons[0].coupon_price.toLocaleString()
-                    }원 `
-                  : `${coupons.length > 0 && coupons[0].coupon_percent}% `}
-                할인
-              </p>
-            </div>
-          </div>
+          {uniqueLists &&
+            uniqueLists.map((list, index) => {
+              const coupon = uniqueCoupons.find(
+                (item) => item.coupon_id === list.coupon_id
+              );
+              return (
+                <div className="content" key={index}>
+                  <img />
+                  <div className="item_box">
+                    <img
+                      src={`/images/coupon/${coupon.coupon_imgUrl}`}
+                      alt=""
+                    />
+                    <p>{coupon.coupon_name}</p>
+                  </div>
+                  <div className="price_box">
+                    <p>
+                      {coupon && coupon.coupon_percent === 0
+                        ? `${coupon && coupon.coupon_price.toLocaleString()}원 `
+                        : `${coupon && coupon.coupon_percent}% `}
+                      할인
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
         </div>
       </div>
       {/* <div id="mobile" className="article_container">

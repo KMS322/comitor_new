@@ -1,6 +1,9 @@
 const passport = require("passport");
 const local = require("./local");
 const { User } = require("../models");
+const kakao = require("./kakaoStrategy");
+const naver = require("./naverStrategy");
+const google = require("./googleStrategy");
 
 module.exports = () => {
   passport.serializeUser((user, done) => {
@@ -18,6 +21,9 @@ module.exports = () => {
   });
 
   local();
+  kakao();
+  naver();
+  google();
 };
 
 passport._debug = true;

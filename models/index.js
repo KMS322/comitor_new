@@ -18,6 +18,7 @@ db.OrderProduct = require("./orderProduct")(sequelize, Sequelize);
 db.Board = require("./board")(sequelize, Sequelize);
 db.Banner = require("./banner")(sequelize, Sequelize);
 db.Coupon = require("./coupon")(sequelize, Sequelize);
+db.CouponList = require("./couponList")(sequelize, Sequelize);
 db.Review = require("./review")(sequelize, Sequelize);
 
 Object.keys(db).forEach((modelName) => {

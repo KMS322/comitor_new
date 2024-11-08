@@ -25,6 +25,9 @@ import {
   CHANGE_ADDRESS_REQUEST,
   CHANGE_ADDRESS_SUCCESS,
   CHANGE_ADDRESS_FAILURE,
+  LOAD_USERS_REQUEST,
+  LOAD_USERS_SUCCESS,
+  LOAD_USERS_FAILURE,
 } from "../reducers/user";
 
 function loadUserAPI() {
@@ -180,6 +183,25 @@ function* changeAddress(action) {
   }
 }
 
+function loadUsersAPI() {
+  return axios.get("/user/loadUsers");
+}
+
+function* loadUsers() {
+  try {
+    const result = yield call(loadUsersAPI);
+    yield put({
+      type: LOAD_USERS_SUCCESS,
+      data: result.data,
+    });
+  } catch (err) {
+    yield put({
+      type: LOAD_USERS_FAILURE,
+      error: err.response.data,
+    });
+  }
+}
+
 function* watchLoadUser() {
   yield takeLatest(LOAD_MY_INFO_REQUEST, loadUser);
 }
@@ -211,6 +233,9 @@ function* watchChangePhone() {
 function* watchChangeAddress() {
   yield takeLatest(CHANGE_ADDRESS_REQUEST, changeAddress);
 }
+function* watchLoadUsersAddress() {
+  yield takeLatest(LOAD_USERS_REQUEST, loadUsers);
+}
 export default function* userSaga() {
   yield all([
     fork(watchLoadUser),
@@ -221,5 +246,6 @@ export default function* userSaga() {
     fork(watchcheckId),
     fork(watchChangePhone),
     fork(watchChangeAddress),
+    fork(watchLoadUsersAddress),
   ]);
 }

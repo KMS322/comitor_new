@@ -7,6 +7,9 @@ export const initialState = {
   logInLoading: false, // 로그인 시도중
   logInDone: false,
   logInError: null,
+  logInKakaoLoading: false, // 로그인 시도중
+  logInKakaoDone: false,
+  logInKakaoError: null,
   logOutLoading: false, // 로그아웃 시도중
   logOutDone: false,
   logOutError: null,
@@ -28,6 +31,7 @@ export const initialState = {
   me: null,
   signUpData: {},
   loginData: {},
+  users: [],
 };
 
 export const LOAD_MY_INFO_REQUEST = "LOAD_MY_INFO_REQUEST";
@@ -61,6 +65,10 @@ export const CHANGE_PHONE_FAILURE = "CHANGE_PHONE_FAUILURE";
 export const CHANGE_ADDRESS_REQUEST = "CHANGE_ADDRESS_REQUEST";
 export const CHANGE_ADDRESS_SUCCESS = "CHANGE_ADDRESS_SUCCESS";
 export const CHANGE_ADDRESS_FAILURE = "CHANGE_ADDRESS_FAUILURE";
+
+export const LOAD_USERS_REQUEST = "LOAD_USERS_REQUEST";
+export const LOAD_USERS_SUCCESS = "LOAD_USERS_SUCCESS";
+export const LOAD_USERS_FAILURE = "LOAD_USERS_FAUILURE";
 
 export const loginRequestAction = (data) => {
   return {
@@ -190,6 +198,20 @@ const reducer = (state = initialState, action) => {
       case CHANGE_ADDRESS_FAILURE:
         draft.changeAddressLoading = false;
         draft.changeAddressError = action.error;
+        break;
+      case LOAD_USERS_REQUEST:
+        draft.loadUsersLoading = true;
+        draft.loadUsersError = null;
+        draft.loadUsersDone = false;
+        break;
+      case LOAD_USERS_SUCCESS:
+        draft.loadUsersLoading = false;
+        draft.users = action.data;
+        draft.loadUsersDone = true;
+        break;
+      case LOAD_USERS_FAILURE:
+        draft.loadUsersLoading = false;
+        draft.loadUsersError = action.error;
         break;
       default:
         return state;

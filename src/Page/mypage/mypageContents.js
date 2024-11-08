@@ -11,8 +11,6 @@ const MypageContents = () => {
   const { carts } = useSelector((state) => state.cart);
 
   const userId = me && me.user_id;
-  console.log("me : ", me);
-  console.log("content 속 id : ", userId);
 
   return (
     <>
@@ -20,7 +18,7 @@ const MypageContents = () => {
       <MypageS2 userId={userId} />
       {/* <MypageS3 carts={uniquecarts} /> */}
       {/* <MypageS4 /> */}
-      <MypageS5 />
+      <MypageS5 userId={userId} />
     </>
   );
 };

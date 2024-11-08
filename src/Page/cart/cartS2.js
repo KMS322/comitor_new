@@ -75,6 +75,24 @@ const CartS2 = () => {
 
     setUniqueProducts(removeDuplicatesById(products));
   }, [products]);
+
+  const removeDuplicatesById = (lists) => {
+    if (!lists || !Array.isArray(lists)) {
+      return [];
+    }
+    const uniqueLists = [];
+    const existingIds = [];
+
+    for (const list of lists) {
+      if (list && list.id && !existingIds.includes(list.id)) {
+        uniqueLists.push(list);
+        existingIds.push(list.id);
+      }
+    }
+
+    return uniqueLists;
+  };
+  const uniqueCarts = removeDuplicatesById(carts);
   useEffect(() => {
     const updatedCarts = uniquecarts.map((cart) => ({
       ...cart,
@@ -227,10 +245,11 @@ const CartS2 = () => {
                 <div className="pay_box">
                   <div
                     onClick={() => {
-                      navigate("/pay", {
+                      navigate("/payCart", {
                         state: {
-                          cartProducts: uniquecarts,
-                          id: cart.product_code,
+                          selectedProduct: selectedProduct,
+                          selectedCnt: cart.product_cnt,
+                          cartId: cart.id,
                         },
                       });
                     }}
@@ -264,7 +283,9 @@ const CartS2 = () => {
                 (item) => item.checked === true
               );
 
-              navigate("/pay", { state: { selectedCart } });
+              navigate("/payAll", { state: { selectedCart, uniqueCarts } });
+              console.log("selectedCart : ", selectedCart);
+              console.log("uniqueCarts : ", uniqueCarts);
             }}
           >
             주문하기

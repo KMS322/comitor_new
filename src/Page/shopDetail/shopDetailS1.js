@@ -11,7 +11,6 @@ const ShopDetailS1 = ({ productCode }) => {
 
   const { products } = useSelector((state) => state.adminProduct);
   const { me } = useSelector((state) => state.user);
-  console.log("me : ", me);
   const [uniqueProducts, setUniqueProducts] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   useEffect(() => {
@@ -162,7 +161,9 @@ const ShopDetailS1 = ({ productCode }) => {
             <div
               className="btn"
               onClick={() => {
-                navigate("/pay", { state: { selectedProduct, selectedCnt } });
+                // navigate("/pay1", { state: { selectedProduct, selectedCnt } });
+                console.log("selectedProduct : ", selectedProduct);
+                console.log("selectedCnt : ", selectedCnt);
               }}
             >
               바로 주문

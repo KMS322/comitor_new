@@ -15,6 +15,9 @@ import SigninContent from "./Page/signin/signinContent";
 import SignFormContent from "./Page/signin/signFormContent";
 import CartContents from "./Page/cart/cartContents";
 import PayContents from "./Page/pay/payContents";
+import Pay1Contents from "./Page/pay1/pay1Contents";
+import PayCartContents from "./Page/payCart/payCartContents";
+import PayAllContents from "./Page/payAll/payAllContents";
 import PayCompleteContent from "./Page/payComplete/payCompleteContent";
 import ShopDetailContents from "./Page/shopDetail/shopDetailContents";
 import BoardContent from "./Page/board/boardContent.js";
@@ -28,6 +31,7 @@ import AdminCoupons from "./AdminPage/adminCoupons.js";
 import AdminReviews from "./AdminPage/adminReviews.js";
 import AdminStatistics from "./AdminPage/adminStatistic.js";
 import Redirection from "./Page/login/redirection.js";
+import AdminUsers from "./AdminPage/adminUsers.js";
 import AdminPopup from "./AdminPage/adminPopup.js";
 import ScrollToTop from "./ScrollToTop";
 
@@ -53,6 +57,9 @@ const App = () => {
         <Route path="/signForm" element={<SignFormContent />} />
         <Route path="/cart" element={<CartContents />} />
         <Route path="/pay" element={<PayContents />} />
+        <Route path="/pay1" element={<Pay1Contents />} />
+        <Route path="/payCart" element={<PayCartContents />} />
+        <Route path="/payAll" element={<PayAllContents />} />
         <Route path="/complete" element={<PayCompleteContent />} />
         <Route path="/shopDetail/:code" element={<ShopDetailContents />} />
         <Route path="/board" element={<BoardContent />} />
@@ -65,6 +72,7 @@ const App = () => {
         <Route path="/adminBanners" element={<AdminBanners />} />
         <Route path="/adminCoupons" element={<AdminCoupons />} />
         <Route path="/adminReviews" element={<AdminReviews />} />
+        <Route path="/adminUsers" element={<AdminUsers />} />
         <Route path="/adminStatistics" element={<AdminStatistics />} />
         <Route path="/auth/*" element={<Redirection />} />
         {/* <Route path="/adminPopup" element={<AdminPopup />} /> */}

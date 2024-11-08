@@ -12,7 +12,18 @@ export const initialState = {
   acceptCouponLoading: false,
   acceptCouponDone: false,
   acceptCouponError: null,
-  coupons: [],
+  giveCouponLoading: false,
+  giveCouponDone: false,
+  giveCouponError: null,
+  loadCouponListsLoading: false,
+  loadCouponListsDone: false,
+  loadCouponListsError: null,
+  loadAllListsLoading: false,
+  loadAllListsDone: false,
+  loadAllListsError: null,
+  coupons: [], // 등록된 모든 쿠폰
+  couponLists: [], // user가 가지고 있는 쿠폰정보 불러오기
+  allLists: [], // 발급된 쿠폰과 유저 매칭 모든 정보
 };
 
 export const ADD_COUPON_REQUEST = "ADD_COUPON_REQUEST";
@@ -30,6 +41,18 @@ export const DELETE_COUPON_FAILURE = "DELETE_COUPON_FAILURE";
 export const ACCEPT_COUPON_REQUEST = "ACCEPT_COUPON_REQUEST";
 export const ACCEPT_COUPON_SUCCESS = "ACCEPT_COUPON_SUCCESS";
 export const ACCEPT_COUPON_FAILURE = "ACCEPT_COUPON_FAILURE";
+
+export const GIVE_COUPON_REQUEST = "GIVE_COUPON_REQUEST";
+export const GIVE_COUPON_SUCCESS = "GIVE_COUPON_SUCCESS";
+export const GIVE_COUPON_FAILURE = "GIVE_COUPON_FAILURE";
+
+export const LOAD_COUPON_LISTS_REQUEST = "LOAD_COUPON_LISTS_REQUEST";
+export const LOAD_COUPON_LISTS_SUCCESS = "LOAD_COUPON_LISTS_SUCCESS";
+export const LOAD_COUPON_LISTS_FAILURE = "LOAD_COUPON_LISTS_FAILURE";
+
+export const LOAD_ALL_LISTS_REQUEST = "LOAD_ALL_LISTS_REQUEST";
+export const LOAD_ALL_LISTS_SUCCESS = "LOAD_ALL_LISTS_SUCCESS";
+export const LOAD_ALL_LISTS_FAILURE = "LOAD_ALL_LISTS_FAILURE";
 
 const reducer = (state = initialState, action) => {
   return produce(state, (draft) => {
@@ -89,6 +112,47 @@ const reducer = (state = initialState, action) => {
       case ACCEPT_COUPON_FAILURE:
         draft.acceptCouponLoading = false;
         draft.acceptCouponError = action.error;
+        break;
+      case GIVE_COUPON_REQUEST:
+        draft.giveCouponLoading = true;
+        draft.giveCouponError = null;
+        draft.giveCouponDone = false;
+        break;
+      case GIVE_COUPON_SUCCESS:
+        draft.giveCouponLoading = false;
+        draft.giveCouponDone = true;
+        break;
+      case GIVE_COUPON_FAILURE:
+        draft.giveCouponLoading = false;
+        draft.giveCouponError = action.error;
+        break;
+      case LOAD_COUPON_LISTS_REQUEST:
+        draft.loadCouponListsLoading = true;
+        draft.loadCouponListsError = null;
+        draft.loadCouponListsDone = false;
+        break;
+      case LOAD_COUPON_LISTS_SUCCESS:
+        draft.loadCouponListsLoading = false;
+        draft.couponLists = draft.couponLists.concat(action.data);
+        draft.loadCouponListsDone = true;
+        break;
+      case LOAD_COUPON_LISTS_FAILURE:
+        draft.loadCouponListsLoading = false;
+        draft.loadCouponListsError = action.error;
+        break;
+      case LOAD_ALL_LISTS_REQUEST:
+        draft.loadAllListsLoading = true;
+        draft.loadAllListsError = null;
+        draft.loadAllListsDone = false;
+        break;
+      case LOAD_ALL_LISTS_SUCCESS:
+        draft.loadAllListsLoading = false;
+        draft.loadAllListsDone = true;
+        draft.allLists = draft.allLists.concat(action.data);
+        break;
+      case LOAD_ALL_LISTS_FAILURE:
+        draft.loadAllListsLoading = false;
+        draft.loadAllListsError = action.error;
         break;
       default:
         return state;

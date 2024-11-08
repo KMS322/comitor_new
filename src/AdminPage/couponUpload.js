@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { ADD_COUPON_REQUEST } from "../reducers/coupon";
-const CouponUpload = ({ handlePopup }) => {
+const CouponUpload = ({ handlePopup, datas }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { addCouponDone } = useSelector((state) => state.coupon);
@@ -16,6 +16,8 @@ const CouponUpload = ({ handlePopup }) => {
   const [coupon_period, onChangePeriod] = useInput("");
   const [couponImage, setCouponImage] = useState("");
   const [selectedFileName, setSelectedFileName] = useState("");
+  const [couponType, setCouponType] = useState("all");
+  const [duplication, setDuplication] = useState("impossibility");
   const handleFileChange = (e) => {
     const attachedFile = e.target.files[0];
     setCouponImage(attachedFile);
@@ -36,7 +38,7 @@ const CouponUpload = ({ handlePopup }) => {
         couponImage,
         encodeURIComponent(couponImage.name)
       );
-      await axios.post("/coupon/uploadFiles", formData, {
+      const response = await axios.post("/coupon/uploadFiles", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -60,6 +62,8 @@ const CouponUpload = ({ handlePopup }) => {
           price,
           coupon_period,
           couponImage: selectedFileName,
+          couponType,
+          duplication,
         },
       });
     } catch (error) {
@@ -70,9 +74,38 @@ const CouponUpload = ({ handlePopup }) => {
   useEffect(() => {
     if (addCouponDone) {
       handlePopup();
-      navigate("/adminCoupons");
+      // navigate("/adminCoupons");
+      window.location.href = "/adminCoupons";
     }
   }, [addCouponDone]);
+
+  const removeDuplicatesById = (lists) => {
+    if (!lists || !Array.isArray(lists)) {
+      return [];
+    }
+    const uniqueLists = [];
+    const existingIds = [];
+
+    for (const list of lists) {
+      if (list && list.id && !existingIds.includes(list.id)) {
+        uniqueLists.push(list);
+        existingIds.push(list.id);
+      }
+    }
+
+    return uniqueLists;
+  };
+  const uniqueCoupons = removeDuplicatesById(datas);
+  console.log("uniqueCoupons : ", uniqueCoupons);
+  const allCoupon = uniqueCoupons.find(
+    (coupon) => coupon.coupon_type === "all"
+  );
+  useEffect(() => {
+    if (allCoupon) {
+      setCouponType("specific");
+    }
+  }, [allCoupon]);
+
   return (
     <div className="couponUpload">
       <img src="/images/delete_btn.png" alt="" onClick={handlePopup} />
@@ -129,7 +162,83 @@ const CouponUpload = ({ handlePopup }) => {
               onChange={onChangePeriod}
             />
           </div>
+          <div className="radio_box">
+            <p>허용 범위 설정</p>
+            <div className="radio_container">
+              {allCoupon ? (
+                <div className="radio">
+                  <p>모두에게 허용</p>
+                  <div
+                    className="radio_circle"
+                    // onClick={() => {
+                    //   setCouponType("all");
+                    // }}
+                    style={{
+                      backgroundColor: "gray",
+                      cursor: "inherit",
+                    }}
+                  ></div>
+                </div>
+              ) : (
+                <div className="radio">
+                  <p>모두에게 허용</p>
+                  <div
+                    className="radio_circle"
+                    onClick={() => {
+                      setCouponType("all");
+                    }}
+                    style={{
+                      backgroundColor: couponType === "all" ? "#40295f" : "",
+                    }}
+                  ></div>
+                </div>
+              )}
 
+              <div className="radio">
+                <p>특정인에게 허용</p>
+                <div
+                  className="radio_circle"
+                  onClick={() => {
+                    setCouponType("specific");
+                  }}
+                  style={{
+                    backgroundColor: couponType === "specific" ? "#40295f" : "",
+                  }}
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div className="radio_box">
+            <p>중복 사용 여부</p>
+            <div className="radio_container">
+              <div className="radio">
+                <p>중복사용 가능</p>
+                <div
+                  className="radio_circle"
+                  onClick={() => {
+                    setDuplication("possibility");
+                  }}
+                  style={{
+                    backgroundColor:
+                      duplication === "possibility" ? "#40295f" : "",
+                  }}
+                ></div>
+              </div>
+              <div className="radio">
+                <p>중복사용 불가능</p>
+                <div
+                  className="radio_circle"
+                  onClick={() => {
+                    setDuplication("impossibility");
+                  }}
+                  style={{
+                    backgroundColor:
+                      duplication === "impossibility" ? "#40295f" : "",
+                  }}
+                ></div>
+              </div>
+            </div>
+          </div>
           <div className="label_container">
             <label htmlFor="couponImage">
               <div className="upload_btn">

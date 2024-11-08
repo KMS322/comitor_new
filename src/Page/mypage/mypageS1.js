@@ -1,6 +1,6 @@
 import "../../CSS/mypage.css";
 import "../../CSS/mypage_mobile.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MypageModal from "./mypageModal";
 
 const MypageS1 = ({ me }) => {
@@ -15,6 +15,11 @@ const MypageS1 = ({ me }) => {
 
     return `${formattedDate}`;
   };
+  useEffect(() => {
+    if (!me) {
+      window.location.href = "/login";
+    }
+  }, [me]);
   return (
     <div className="mypage_s1">
       {/* <img src="/images/mypage/mypage_s1_img1.png" alt="" /> */}

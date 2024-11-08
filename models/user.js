@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     "User",
     {
       user_id: {
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING(100),
         allowNull: true,
       },
       user_pw: {
@@ -32,10 +32,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       user_postcode: {
         type: DataTypes.STRING(10),
-        allowNull: true,
-      },
-      user_coupon: {
-        type: DataTypes.STRING(30),
         allowNull: true,
       },
       platform_type: {

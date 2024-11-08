@@ -55,7 +55,7 @@ const AdminCoupon = () => {
       {(me && me === "") || me.user_id === "admin" ? (
         <>
           <div className="adminCoupons">
-            {coupons.length === 0 ? (
+            {/* {coupons.length === 0 ? (
               <div className="upload_btn">
                 <p
                   onClick={() => {
@@ -70,14 +70,24 @@ const AdminCoupon = () => {
                 className="upload_btn"
                 style={{ backgroundColor: "white", cursor: "inherit" }}
               ></div>
-            )}
-
+            )} */}
+            <div className="upload_btn">
+              <p
+                onClick={() => {
+                  setOpenForm(true);
+                }}
+              >
+                <span>+</span> 업로드
+              </p>
+            </div>
             <div className="table">
               <div className="head_row row">
                 <p>쿠폰 코드</p>
                 <p>쿠폰 이름</p>
                 <p>쿠폰 할인</p>
                 <p>쿠폰 기간</p>
+                <p>중복 여부</p>
+                <p>쿠폰 유형</p>
                 <p></p>
               </div>
               {uniqueCoupons &&
@@ -100,6 +110,16 @@ const AdminCoupon = () => {
                         {coupon.coupon_percent === 0 ? "원" : "%"}
                       </p>
                       <p>~{coupon.coupon_period}</p>
+                      <p>
+                        {coupon.coupon_duplication === "possibilty"
+                          ? "가능"
+                          : "불가능"}
+                      </p>
+                      <p>
+                        {coupon.coupon_type === "all"
+                          ? "모두에게 허용"
+                          : "특정인에게 허용"}
+                      </p>
                       <div
                         className="btn_box"
                         onClick={() => {
@@ -117,6 +137,7 @@ const AdminCoupon = () => {
                 handlePopup={() => {
                   setOpenForm(false);
                 }}
+                datas={coupons}
               />
             ) : (
               ""

@@ -2,6 +2,11 @@ module.exports = (sequelize, DataTypes) => {
   const Coupon = sequelize.define(
     "Coupon",
     {
+      coupon_id: {
+        type: DataTypes.STRING(30),
+        allowNull: false,
+        unique: true,
+      },
       coupon_code: {
         type: DataTypes.STRING(30),
         allowNull: false,
@@ -25,7 +30,15 @@ module.exports = (sequelize, DataTypes) => {
       },
       coupon_imgUrl: {
         type: DataTypes.STRING(50),
-        allonwNull: true,
+        allowNull: true,
+      },
+      coupon_duplication: {
+        type: DataTypes.STRING(20),
+        allowNull: true,
+      },
+      coupon_type: {
+        type: DataTypes.STRING(20),
+        allowNull: true,
       },
     },
     {

@@ -59,8 +59,8 @@
   text-align: center;
 }
 .adminCoupons .table .row > p:nth-child(2) {
+  width: 35%;
   margin-left: 1.3vw;
-  width: 40%;
   white-space: nowrap;
   overflow: hidden;
 }

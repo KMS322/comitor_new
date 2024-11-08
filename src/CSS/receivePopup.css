@@ -1,0 +1,20 @@
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.receivePopup {
+  width: 20vw;
+  height: 10vw;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  border: 1px solid #000035;
+  background-color: white;
+  animation: slideUp 1s ease-in-out;
+}
