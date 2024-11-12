@@ -161,9 +161,7 @@ const ShopDetailS1 = ({ productCode }) => {
             <div
               className="btn"
               onClick={() => {
-                // navigate("/pay1", { state: { selectedProduct, selectedCnt } });
-                console.log("selectedProduct : ", selectedProduct);
-                console.log("selectedCnt : ", selectedCnt);
+                navigate("/pay1", { state: { selectedProduct, selectedCnt } });
               }}
             >
               바로 주문

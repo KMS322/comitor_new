@@ -2,131 +2,127 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { ADD_ORDER_REQUEST } from "../../reducers/order";
+import PortOne from "@portone/browser-sdk/v2";
+import { randomId } from "./lib/random";
 import "../../CSS/pay.css";
 import "../../CSS/pay_mobile.css";
 
 const Pay1Modal = ({ setModalOpen, orderInfo }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const [initialized, setInitialized] = useState(false);
+  const [item, setItem] = useState(null);
+  const [paymentStatus, setPaymentStatus] = useState({
+    status: "IDLE",
+  });
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://cdn.iamport.kr/v1/iamport.js";
-    script.async = true;
+    async function loadItem() {
+      const response = await fetch("/api/item");
+      setItem(await response.json());
+    }
 
-    script.onload = () => {
-      window.IMP.init("imp63564407");
-      setInitialized(true);
-    };
-
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
+    loadItem().catch((error) => console.error(error));
   }, []);
 
-  const IMP = window.IMP;
-  var today = new Date();
-  var hours = today.getHours(); // 시
-  var minutes = today.getMinutes(); // 분
-  var seconds = today.getSeconds(); // 초
-  var milliseconds = today.getMilliseconds();
-  var makeMerchantUid = hours + minutes + seconds + milliseconds;
+  if (item == null) {
+    return (
+      <dialog open>
+        <article aria-busy>결제 정보를 불러오는 중입니다.</article>
+      </dialog>
+    );
+  }
 
-  const requestPayment = (paymentMethod) => {
-    if (!initialized) {
-      console.error("IMP is not initialized");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setPaymentStatus({ status: "PENDING" });
+    const paymentId = randomId();
+    const payment = await PortOne.requestPayment({
+      storeId: process.env.VITE_STORE_ID,
+      channelKey: process.env.VITE_CHANNEL_KEY,
+      paymentId,
+      orderName: item.name,
+      totalAmount: item.price,
+      currency: item.currency,
+      payMethod: "VIRTUAL_ACCOUNT",
+      virtualAccount: {
+        accountExpiry: {
+          validHours: 1,
+        },
+      },
+      customData: {
+        item: item.id,
+      },
+    });
+
+    if (payment.code != null) {
+      setPaymentStatus({
+        status: "FAILED",
+        message: payment.message,
+      });
       return;
     }
-    let productName = "";
 
-    const requestData = {
-      name: "!!",
-      amount: 200,
-      buyer_email: "Iamport@chai.finance",
-      buyer_name: "아임포트 기술지원팀",
-      buyer_tel: "010-1234-5678",
-      buyer_addr: "서울특별시 강남구 삼성동",
-      buyer_postcode: "123-456",
-      m_redirect_url: "http://localhost/myPageBusiness",
-    };
-
-    switch (paymentMethod) {
-      case "kgPay":
-        requestData.pg = "html5_inicis";
-        requestData.pay_method = "card";
-        break;
-      case "kakaoPay":
-        requestData.pg = "kakaopay.TC0ONETIME";
-        requestData.pay_method = "card";
-        break;
-      case "tossPay":
-        requestData.pg = "tosspay.tosstest";
-        requestData.pay_method = "card";
-        requestData.merchant_uid = makeMerchantUid;
-        break;
-      default:
-        console.error("Invalid payment method");
-        return;
-    }
-
-    IMP.request_pay(requestData, function (rsp) {
-      if (rsp.success) {
-        console.log(rsp);
-      } else {
-        console.log(rsp);
-      }
+    const completeResponse = await fetch("/api/payment/complete", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        paymentId: payment.paymentId,
+      }),
     });
+
+    if (completeResponse.ok) {
+      const paymentComplete = await completeResponse.json();
+      setPaymentStatus({
+        status: paymentComplete.status,
+      });
+    } else {
+      setPaymentStatus({
+        status: "FAILED",
+        message: await completeResponse.text(),
+      });
+    }
   };
+
+  const isWaitingPayment = paymentStatus.status !== "IDLE";
+
+  const handleClose = () =>
+    setPaymentStatus({
+      status: "IDLE",
+    });
 
   const addOrder = () => {
     dispatch({
       type: ADD_ORDER_REQUEST,
       data: { orderInfo },
     });
-    window.location.href = "/complete";
-    // navigate("/complete");
+    navigate("/complete");
   };
 
   return (
     <div className="payModal_background">
       <div className="payModal_container">
         <div className="payModal_header">
-          <h2></h2>
+          <h2>결제</h2>
           <button onClick={() => setModalOpen(false)}>닫기 X</button>
         </div>
         <div className="payModal_content">
           <p>결제 방법을 선택해주세요.</p>
-          <div
+          <button
             className="btn"
-            onClick={() => {
-              // requestPayment("kgPay");
-              addOrder();
-            }}
+            onClick={handleSubmit} // handleSubmit으로 변경
           >
-            카드결제
-          </div>
-          <div
-            className="btn"
-            onClick={() => {
-              // requestPayment("kakaoPay");
-              addOrder();
-            }}
-          >
-            카카오페이
-          </div>
-          <div
-            className="btn"
-            onClick={() => {
-              // requestPayment("tossPay");
-              addOrder();
-            }}
-          >
-            토스페이
-          </div>
+            결제하기
+          </button>
+          {paymentStatus.status === "FAILED" && (
+            <p className="error">{paymentStatus.message}</p>
+          )}
+          {paymentStatus.status === "PAID" && (
+            <button className="btn" onClick={addOrder}>
+              주문 완료하기
+            </button>
+          )}
         </div>
       </div>
     </div>

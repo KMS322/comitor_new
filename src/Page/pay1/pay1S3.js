@@ -21,7 +21,6 @@ const Pay1S3 = ({ deliveryInfo }) => {
   const selectedProduct = location.state && location.state.selectedProduct;
   const selectedCnt = location.state && location.state.selectedCnt;
 
-  console.log("coupons : ", coupons);
   const [salePrice, setSalePrice] = useState(0);
   const [onCoupon, setOnCoupon] = useState(false);
   const [dupliCoupon, setDupliOnCoupon] = useState(false);
@@ -128,7 +127,6 @@ const Pay1S3 = ({ deliveryInfo }) => {
     return uniqueLists;
   };
   const uniqueLists = removeDuplicatesById(couponLists);
-  console.log("uniqueLists : ", uniqueLists);
   const handlePaymentClick = () => {
     let price = salePrice;
 
