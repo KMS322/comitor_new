@@ -63,6 +63,7 @@ const items = new Map([
 
 // 아이템 정보 조회 엔드포인트
 router.get("/item", (req, res) => {
+  console.log("AA");
   const id = "shoes";
   res.json({
     id,

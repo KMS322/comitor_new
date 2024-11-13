@@ -128,17 +128,16 @@ const Pay1S3 = ({ deliveryInfo }) => {
   };
   const uniqueLists = removeDuplicatesById(couponLists);
   const handlePaymentClick = () => {
-    let price = salePrice;
-
     const data = {
-      carts: [selectedProduct],
+      products: selectedProduct,
       me,
       deliveryInfo,
       price: salePrice,
     };
     setOrderData(data);
-
+    console.log("AA");
     setModalOpen(true);
+    console.log("BB");
   };
 
   useEffect(() => {
@@ -316,6 +315,7 @@ const Pay1S3 = ({ deliveryInfo }) => {
 
       {modalOpen && (
         <Pay1Modal setModalOpen={setModalOpen} orderInfo={orderData} />
+        // <Pay1Modal setModalOpen={setModalOpen} />
       )}
     </div>
   );

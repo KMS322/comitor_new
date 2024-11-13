@@ -10,10 +10,12 @@ import "../../CSS/pay_mobile.css";
 const Pay1Modal = ({ setModalOpen, orderInfo }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [item, setItem] = useState(null);
+  const [item, setItem] = useState(orderInfo);
   const [paymentStatus, setPaymentStatus] = useState({
     status: "IDLE",
   });
+
+  console.log("item : ", item);
 
   useEffect(() => {
     async function loadItem() {
@@ -24,13 +26,13 @@ const Pay1Modal = ({ setModalOpen, orderInfo }) => {
     loadItem().catch((error) => console.error(error));
   }, []);
 
-  if (item == null) {
-    return (
-      <dialog open>
-        <article aria-busy>결제 정보를 불러오는 중입니다.</article>
-      </dialog>
-    );
-  }
+  // if (item == null) {
+  //   return (
+  //     <dialog open>
+  //       <article aria-busy>결제 정보를 불러오는 중입니다.</article>
+  //     </dialog>
+  //   );
+  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,9 +42,9 @@ const Pay1Modal = ({ setModalOpen, orderInfo }) => {
       storeId: process.env.VITE_STORE_ID,
       channelKey: process.env.VITE_CHANNEL_KEY,
       paymentId,
-      orderName: item.name,
+      orderName: item.products.product_name,
       totalAmount: item.price,
-      currency: item.currency,
+      currency: "KRW",
       payMethod: "VIRTUAL_ACCOUNT",
       virtualAccount: {
         accountExpiry: {
@@ -50,7 +52,7 @@ const Pay1Modal = ({ setModalOpen, orderInfo }) => {
         },
       },
       customData: {
-        item: item.id,
+        item: item.products.id,
       },
     });
 
