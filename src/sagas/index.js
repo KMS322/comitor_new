@@ -8,6 +8,7 @@ import boardSaga from "./board";
 import bannerSaga from "./banner";
 import couponSaga from "./coupon";
 import reviewSaga from "./review";
+import payApiSaga from "./payApi";
 
 import { API_URL } from "../constants";
 
@@ -24,5 +25,6 @@ export default function* rootSaga() {
     fork(bannerSaga),
     fork(couponSaga),
     fork(reviewSaga),
+    fork(payApiSaga),
   ]);
 }

@@ -7,6 +7,7 @@ import board from "./board";
 import banner from "./banner";
 import coupon from "./coupon";
 import review from "./review";
+import payApi from "./payApi";
 
 const rootReducer = combineReducers({
   user,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   banner,
   coupon,
   review,
+  payApi,
 });
 
 export default rootReducer;
