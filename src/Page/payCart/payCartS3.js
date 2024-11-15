@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { LOAD_COUPON_LISTS_REQUEST } from "../../reducers/coupon";
-import Pay1Modal from "./payCartModal";
+import PayCartModal from "./payCartModal";
 import "../../CSS/pay.css";
 import "../../CSS/pay_mobile.css";
 const PayCartS3 = ({ deliveryInfo }) => {
@@ -21,9 +21,7 @@ const PayCartS3 = ({ deliveryInfo }) => {
   const selectedProduct = location.state && location.state.selectedProduct;
   const selectedCnt = location.state && location.state.selectedCnt;
   const cartId = location.state && location.state.cartId;
-  console.log("cartId : ", cartId);
 
-  console.log("coupons : ", coupons);
   const [salePrice, setSalePrice] = useState(0);
   const [onCoupon, setOnCoupon] = useState(false);
   const [dupliCoupon, setDupliOnCoupon] = useState(false);
@@ -130,18 +128,15 @@ const PayCartS3 = ({ deliveryInfo }) => {
     return uniqueLists;
   };
   const uniqueLists = removeDuplicatesById(couponLists);
-  console.log("uniqueLists : ", uniqueLists);
   const handlePaymentClick = () => {
-    let price = salePrice;
-
     const data = {
-      carts: [selectedProduct],
+      carts: cartId,
+      products: selectedProduct,
       me,
       deliveryInfo,
       price: salePrice,
     };
     setOrderData(data);
-
     setModalOpen(true);
   };
 
@@ -319,7 +314,7 @@ const PayCartS3 = ({ deliveryInfo }) => {
       </div>
 
       {modalOpen && (
-        <Pay1Modal setModalOpen={setModalOpen} orderInfo={orderData} />
+        <PayCartModal setModalOpen={setModalOpen} orderInfo={orderData} />
       )}
     </div>
   );

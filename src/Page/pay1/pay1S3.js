@@ -130,14 +130,11 @@ const Pay1S3 = ({ deliveryInfo }) => {
   const handlePaymentClick = () => {
     const data = {
       products: selectedProduct,
-      me,
       deliveryInfo,
       price: salePrice,
     };
     setOrderData(data);
-    console.log("AA");
     setModalOpen(true);
-    console.log("BB");
   };
 
   useEffect(() => {

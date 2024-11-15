@@ -8,9 +8,9 @@ import "../../CSS/pay_mobile.css";
 const PayModal = ({ setModalOpen, orderInfo }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const [initialized, setInitialized] = useState(false);
-
+  console.log("orderInfo : ", orderInfo);
+  const page = "pay1";
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://cdn.iamport.kr/v1/iamport.js";
@@ -37,57 +37,53 @@ const PayModal = ({ setModalOpen, orderInfo }) => {
   var makeMerchantUid = hours + minutes + seconds + milliseconds;
 
   const requestPayment = (paymentMethod) => {
-    if (!initialized) {
-      console.error("IMP is not initialized");
-      return;
-    }
+    addOrder();
+    // if (!initialized) {
+    //   console.error("IMP is not initialized");
+    //   return;
+    // }
 
-    const requestData = {
-      name: "!!",
-      amount: 2,
-      buyer_email: "Iamport@chai.finance",
-      buyer_name: "아임포트 기술지원팀",
-      buyer_tel: "010-1234-5678",
-      buyer_addr: "서울특별시 강남구 삼성동",
-      buyer_postcode: "123-456",
-      m_redirect_url: "http://localhost/myPageBusiness",
-    };
+    // const requestData = {
+    //   name: orderInfo.products.product_name,
+    //   amount: orderInfo.price,
+    //   m_redirect_url: "http://localhost/",
+    // };
 
-    switch (paymentMethod) {
-      case "kgPay":
-        requestData.pg = "html5_inicis";
-        requestData.pay_method = "card";
-        break;
-      case "kakaoPay":
-        requestData.pg = "kakaopay.TC0ONETIME";
-        requestData.pay_method = "card";
-        break;
-      case "tossPay":
-        requestData.pg = "tosspay.tosstest";
-        requestData.pay_method = "card";
-        requestData.merchant_uid = makeMerchantUid;
-        break;
-      default:
-        console.error("Invalid payment method");
-        return;
-    }
+    // switch (paymentMethod) {
+    //   case "kgPay":
+    //     requestData.pg = "html5_inicis";
+    //     requestData.pay_method = "card";
+    //     break;
+    //   case "kakaoPay":
+    //     requestData.pg = "kakaopay.TC0ONETIME";
+    //     requestData.pay_method = "card";
+    //     break;
+    //   case "tossPay":
+    //     requestData.pg = "tosspay.tosstest";
+    //     requestData.pay_method = "card";
+    //     requestData.merchant_uid = makeMerchantUid;
+    //     break;
+    //   default:
+    //     console.error("Invalid payment method");
+    //     return;
+    // }
 
-    IMP.request_pay(requestData, function (rsp) {
-      if (rsp.success) {
-        console.log(rsp);
-      } else {
-        console.log(rsp);
-      }
-    });
+    // IMP.request_pay(requestData, function (rsp) {
+    //   if (rsp.success) {
+    //     console.log(rsp);
+    //     addOrder();
+    //   } else {
+    //     console.log(rsp);
+    //   }
+    // });
   };
 
   const addOrder = () => {
     dispatch({
       type: ADD_ORDER_REQUEST,
-      data: { orderInfo },
+      data: { orderInfo, page },
     });
-    window.location.href = "/complete";
-    // navigate("/complete");
+    // window.location.href = "/complete";
   };
 
   return (
