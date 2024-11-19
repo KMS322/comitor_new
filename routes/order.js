@@ -8,48 +8,87 @@ const dayjs = require("dayjs");
 
 router.post("/add", async (req, res, next) => {
   try {
-    const { deliveryInfo, price, products } = req.body.orderInfo;
+    const {
+      deliveryInfo,
+      price,
+      products,
+      me,
+      cartId,
+      selectedCnt,
+      uniqueCarts,
+    } = req.body.orderInfo;
     const { page } = req.body;
+    const orderCode = dayjs().format("YYYYMMDDHHmmss");
     let cnt = 0;
     if (page === "pay1") {
       cnt = 1;
+    } else if (page === "payCart") {
+      cnt = selectedCnt;
+    }
+    if (page !== "payAll") {
+      await OrderList.create({
+        order_id: 1,
+        order_code: orderCode,
+        user_id: me ? me.user_id : "non",
+        order_name: deliveryInfo.name,
+        order_phone: deliveryInfo.phone,
+        order_address: deliveryInfo.address,
+        order_request: deliveryInfo.request,
+      });
+      await OrderProduct.create({
+        order_code: orderCode,
+        product_code: products.product_code,
+        product_cnt: cnt,
+      });
+
+      if (page === "payCart") {
+        await Cart.destroy({
+          where: {
+            id: cartId,
+          },
+        });
+        if (me) {
+          await Review.create({
+            review_code: `${orderCode}/${products.product_code}/review`,
+            order_code: orderCode,
+            product_code: products.product_code,
+            user_id: me.user_id,
+          });
+        }
+      }
+    } else {
+      for (const cart of uniqueCarts) {
+        await OrderList.create({
+          order_id: 1,
+          order_code: orderCode,
+          user_id: me.user_id,
+          order_name: deliveryInfo.name,
+          order_phone: deliveryInfo.phone,
+          order_address: deliveryInfo.address,
+          order_request: deliveryInfo.request,
+        });
+        await OrderProduct.create({
+          order_code: orderCode,
+          product_code: cart.product_code,
+          product_cnt: cart.product_cnt === 0 ? 1 : cart.product_cnt,
+        });
+        await Cart.destroy({
+          where: {
+            id: cart.id,
+          },
+        });
+        if (me) {
+          await Review.create({
+            review_code: `${orderCode}/${products.product_code}/review`,
+            order_code: orderCode,
+            product_code: cart.product_code,
+            user_id: me.user_id,
+          });
+        }
+      }
     }
 
-    const orderCode = dayjs().format("YYYYMMDDHHmmss");
-    await OrderList.create({
-      order_id: 1,
-      order_code: orderCode,
-      user_id: "non",
-      order_name: deliveryInfo.name,
-      order_phone: deliveryInfo.phone,
-      order_address: deliveryInfo.address,
-      order_request: deliveryInfo.request,
-    });
-    await OrderProduct.create({
-      order_code: orderCode,
-      product_code: products.product_code,
-      product_cnt: cnt,
-    });
-    // for (const cart of carts) {
-    //   await OrderProduct.create({
-    //     order_code: order_code,
-    //     product_code: cart.product_code,
-    //     product_cnt: cart.product_saleCnt === 0 ? 1 : cart.product_saleCnt,
-    //   });
-    //   await Cart.destroy({
-    //     where: {
-    //       id: cart.id,
-    //     },
-    //   });
-    //   if (me) {
-    //     await Review.create({
-    //       review_code: `${order_code}/review`,
-    //       order_code: order_code,
-    //       product_code: cart.product_code,
-    //       user_id: me.user_id,
-    //     });
-    //   }
-    // }
+    // // // // // // // // // // // // // // // // // // // //
 
     res.status(201).send("ok");
   } catch (error) {

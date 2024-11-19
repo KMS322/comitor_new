@@ -15,11 +15,11 @@ const MypageS1 = ({ me }) => {
 
     return `${formattedDate}`;
   };
-  useEffect(() => {
-    if (!me) {
-      window.location.href = "/login";
-    }
-  }, [me]);
+  // useEffect(() => {
+  //   if (!me) {
+  //     window.location.href = "/login";
+  //   }
+  // }, [me]);
   return (
     <div className="mypage_s1">
       {/* <img src="/images/mypage/mypage_s1_img1.png" alt="" /> */}

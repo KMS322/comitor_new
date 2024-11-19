@@ -13,6 +13,7 @@ const MypageS2 = ({ userId }) => {
     (state) => state.review
   );
   const [popupState, setPopupState] = useState(false);
+  const [uniqueOrders, setUniqueOrders] = useState([]);
   const [uniqueProducts, setUniqueProducts] = useState([]);
   const [uniqueReviews, setUniqueReviews] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
@@ -38,6 +39,28 @@ const MypageS2 = ({ userId }) => {
       data: { userId },
     });
   }, [dispatch, userId]);
+
+  useEffect(() => {
+    const removeDuplicatesById = (lists) => {
+      if (!lists || !Array.isArray(lists)) {
+        return [];
+      }
+      const uniqueLists = [];
+      const existingIds = [];
+
+      for (const list of lists) {
+        if (list && list.id && !existingIds.includes(list.id)) {
+          uniqueLists.push(list);
+          existingIds.push(list.id);
+        }
+      }
+
+      return uniqueLists;
+    };
+
+    setUniqueOrders(removeDuplicatesById(userProducts));
+  }, [userProducts]);
+
   useEffect(() => {
     const removeDuplicatesById = (lists) => {
       if (!lists || !Array.isArray(lists)) {
@@ -105,6 +128,7 @@ const MypageS2 = ({ userId }) => {
   const closeModal = () => {
     setModalOpen(false);
   };
+
   return (
     <>
       <div className="mypage_s2">
@@ -119,8 +143,8 @@ const MypageS2 = ({ userId }) => {
               <p>주문금액(수량)</p>
               <p>리뷰상태</p>
             </div>
-            {userProducts &&
-              userProducts.map((userProduct, index) => {
+            {uniqueOrders &&
+              uniqueOrders.map((userProduct, index) => {
                 const product = uniqueProducts.find(
                   (item) => item.product_code === userProduct.product_code
                 );

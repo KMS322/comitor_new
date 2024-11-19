@@ -56,7 +56,7 @@ const AdminReviews = () => {
     if (deleteReviewDone) {
       window.location.href = "/adminReviews";
     }
-  }, deleteReviewDone);
+  }, [deleteReviewDone]);
 
   return (
     <>

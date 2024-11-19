@@ -21,7 +21,7 @@ const CouponModal = ({ setModalOpen, coupon, user, setPopupOpen }) => {
   useEffect(() => {
     if (acceptCouponDone) {
       setModalOpen(false);
-      window.location.href = "/";
+      // window.location.href = "/";
     }
   }, [acceptCouponDone]);
   return (

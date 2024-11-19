@@ -98,7 +98,8 @@ const LoginContent = () => {
             회원가입
           </div>
           <div className="kakao_btn">
-            <img src="/images/login/kakao.png" alt="" />
+            <img src="/images/login/login_kakao.png" alt="" />
+
             <p
               onClick={() => {
                 kakaoLogin();
@@ -108,7 +109,7 @@ const LoginContent = () => {
             </p>
           </div>
           <div className="kakao_btn">
-            <img src="/images/login/kakao.png" alt="" />
+            <img src="/images/login/login_naver.png" alt="" />
             <p
               onClick={() => {
                 naverLogin();
@@ -118,7 +119,7 @@ const LoginContent = () => {
             </p>
           </div>
           <div className="kakao_btn">
-            <img src="/images/login/kakao.png" alt="" />
+            <img src="/images/login/login_google.png" alt="" />
             <p
               onClick={() => {
                 googleLogin();

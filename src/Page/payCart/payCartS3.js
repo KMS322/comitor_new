@@ -21,6 +21,7 @@ const PayCartS3 = ({ deliveryInfo }) => {
   const selectedProduct = location.state && location.state.selectedProduct;
   const selectedCnt = location.state && location.state.selectedCnt;
   const cartId = location.state && location.state.cartId;
+  console.log("cartId : ", cartId);
 
   const [salePrice, setSalePrice] = useState(0);
   const [onCoupon, setOnCoupon] = useState(false);
@@ -130,11 +131,12 @@ const PayCartS3 = ({ deliveryInfo }) => {
   const uniqueLists = removeDuplicatesById(couponLists);
   const handlePaymentClick = () => {
     const data = {
-      carts: cartId,
+      cartId,
       products: selectedProduct,
       me,
       deliveryInfo,
       price: salePrice,
+      selectedCnt,
     };
     setOrderData(data);
     setModalOpen(true);

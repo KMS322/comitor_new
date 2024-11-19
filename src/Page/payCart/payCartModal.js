@@ -76,7 +76,6 @@ const PayCartModal = ({ setModalOpen, orderInfo }) => {
     //   }
     // });
   };
-
   const addOrder = () => {
     dispatch({
       type: ADD_ORDER_REQUEST,

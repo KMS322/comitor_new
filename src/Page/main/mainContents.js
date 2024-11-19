@@ -37,13 +37,13 @@ const MainContents = () => {
   };
   const uniqueCoupons = removeDuplicatesById(coupons);
   const allCoupon = uniqueCoupons.find(
-    (coupon) => coupon.coupon_type === "all"
+    (coupon) => coupon?.coupon_type === "all"
   );
   // console.log("allCoupon : ", allCoupon);
   // console.log("me : ", me);
   // console.log("couponLists : ", couponLists);
   const acceptableCoupon = couponLists.find(
-    (list) => list.coupon_id === allCoupon.coupon_id
+    (list) => list?.coupon_id === allCoupon?.coupon_id
   );
   // console.log("acceptableCoupon : ", acceptableCoupon);
   useEffect(() => {

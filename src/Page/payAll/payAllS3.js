@@ -17,7 +17,6 @@ const PayAllS3 = ({ deliveryInfo }) => {
 
   const selectedCart = location.state && location.state.selectedCart;
   const uniqueCarts = location.state && location.state.uniqueCarts;
-
   const [salePrice, setSalePrice] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
   const [onCoupon, setOnCoupon] = useState(false);
@@ -98,7 +97,7 @@ const PayAllS3 = ({ deliveryInfo }) => {
         setSalePrice(sale);
       }
     }
-  }, [onCoupon, dupliCoupon]);
+  }, [totalPrice, onCoupon, dupliCoupon, coupons]);
 
   const removeDuplicatesById = (lists) => {
     if (!lists || !Array.isArray(lists)) {
@@ -125,14 +124,16 @@ const PayAllS3 = ({ deliveryInfo }) => {
         const product = uniqueProducts.find(
           (product) => product.product_code === item.product_code
         );
-        total += product?.product_salePrice;
+
+        total += product?.product_salePrice * item.product_cnt;
       });
+      console.log("total : ", total);
       setTotalPrice(total);
     }
-  }, [selectedCart]);
+  }, [selectedCart, uniqueProducts]);
   const handlePaymentClick = () => {
     const data = {
-      carts: [selectedCart],
+      uniqueCarts,
       me,
       deliveryInfo,
       price: salePrice,

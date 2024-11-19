@@ -6,10 +6,7 @@ import MypageS3 from "./mypageS3";
 import MypageS4 from "./mypageS4";
 import MypageS5 from "./mypageS5";
 const MypageContents = () => {
-  const dispatch = useDispatch();
   const { me } = useSelector((state) => state.user);
-  const { carts } = useSelector((state) => state.cart);
-
   const userId = me && me.user_id;
 
   return (

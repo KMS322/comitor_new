@@ -9,7 +9,6 @@ const PayModal = ({ setModalOpen, orderInfo }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [initialized, setInitialized] = useState(false);
-  console.log("orderInfo : ", orderInfo);
   const page = "pay1";
   useEffect(() => {
     const script = document.createElement("script");
