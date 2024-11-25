@@ -14,6 +14,8 @@ const couponRouter = require("./routes/coupon");
 const reviewRouter = require("./routes/review");
 const snsRouter = require("./routes/sns");
 const paymentsRouter = require("./routes/payments");
+
+const tossRouter = require("./routes/payments.router");
 // const listRouter = require("./routes/list");
 // const contactRouter = require("./routes/contact");
 // const dummyRouter = require("./routes/dummy");
@@ -82,6 +84,7 @@ app.use("/coupon", couponRouter);
 app.use("/review", reviewRouter);
 app.use("/sns", snsRouter);
 app.use("/paymentsRouter", paymentsRouter);
+app.use("/sandbox-dev/api/v1/payments", tossRouter);
 // app.use("/list", listRouter);
 // app.use("/contact", contactRouter);
 // app.use("/dummy", dummyRouter);

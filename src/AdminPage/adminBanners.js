@@ -12,6 +12,7 @@ const AdminBanners = () => {
   const me = location.state && location.state.me;
   const [openForm, setOpenForm] = useState(false);
   const { banners, deleteBannerDone } = useSelector((state) => state.banner);
+  console.log("banners : ", banners);
   const removeDuplicatesById = (lists) => {
     if (!lists || !Array.isArray(lists)) {
       return [];

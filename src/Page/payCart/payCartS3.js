@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { LOAD_COUPON_LISTS_REQUEST } from "../../reducers/coupon";
 import PayCartModal from "./payCartModal";
+import TossCheckoutPage from "../toss_checkout";
 import "../../CSS/pay.css";
 import "../../CSS/pay_mobile.css";
 const PayCartS3 = ({ deliveryInfo }) => {
@@ -21,7 +22,7 @@ const PayCartS3 = ({ deliveryInfo }) => {
   const selectedProduct = location.state && location.state.selectedProduct;
   const selectedCnt = location.state && location.state.selectedCnt;
   const cartId = location.state && location.state.cartId;
-  console.log("cartId : ", cartId);
+  const page = "payCart";
 
   const [salePrice, setSalePrice] = useState(0);
   const [onCoupon, setOnCoupon] = useState(false);
@@ -137,6 +138,7 @@ const PayCartS3 = ({ deliveryInfo }) => {
       deliveryInfo,
       price: salePrice,
       selectedCnt,
+      page,
     };
     setOrderData(data);
     setModalOpen(true);
@@ -171,7 +173,9 @@ const PayCartS3 = ({ deliveryInfo }) => {
             </div>
             <p>{selectedCnt}</p>
             <p>
-              {me && me.user_coupon && coupons[0].coupon_name ? "1개" : "없음"}
+              {me && uniqueLists.length > 0
+                ? `${uniqueLists.length}개`
+                : "없음"}
             </p>
             <p>무료</p>
             <p>
@@ -286,13 +290,17 @@ const PayCartS3 = ({ deliveryInfo }) => {
           </div>
           <div className="row_head">
             <p>수량</p>
-            <p>상품 할인</p>
+            <p>할인 쿠폰</p>
             <p>배송비</p>
             <p>주문금액</p>
           </div>
           <div className="row_content">
             <p>{selectedCnt}</p>
-            <p>없음</p>
+            <p>
+              {me && uniqueLists.length > 0
+                ? `${uniqueLists.length}개`
+                : "없음"}
+            </p>
             <p>무료</p>
             <p>
               {(
@@ -302,21 +310,98 @@ const PayCartS3 = ({ deliveryInfo }) => {
             </p>
           </div>
         </div>
-        <div
-          id="mobile"
-          className="pay_btn"
-          onClick={() => {
-            navigate("/complete");
-          }}
-        >
-          {(selectedProduct.product_salePrice * selectedCnt).toLocaleString()}원
-          결제하기
+        <div id="mobile" className="coupon_box1">
+          <p>보유한 쿠폰</p>
+          {uniqueLists &&
+            uniqueLists.map((list, index) => {
+              const coupon = coupons.find(
+                (item) => item.coupon_id === list.coupon_id
+              );
+              if (coupon.coupon_duplication === "impossibility") {
+                return (
+                  <div className="coupon_list" key={index}>
+                    <p>{coupon.coupon_name}</p>
+                    {coupon.coupon_percent ? (
+                      <p>{coupon.coupon_percent}% 할인</p>
+                    ) : (
+                      <p>{coupon.coupon_price}원 할인</p>
+                    )}
+                    <div className="coupon_btn_box">
+                      <div
+                        className="coupon_btn"
+                        onClick={() => {
+                          if (onCoupon === coupon.coupon_id) {
+                            setOnCoupon("");
+                            alert(
+                              `${coupon.coupon_name}이(가) 해제되었습니다.`
+                            );
+                          } else {
+                            setOnCoupon(coupon.coupon_id);
+                            alert(
+                              `${coupon.coupon_name}이(가) 적용되었습니다.`
+                            );
+                          }
+                        }}
+                        style={{
+                          backgroundColor:
+                            onCoupon === coupon.coupon_id ? "#000035" : "",
+                          color: onCoupon === coupon.coupon_id ? "white" : "",
+                        }}
+                      >
+                        적용
+                      </div>
+                    </div>
+                  </div>
+                );
+              } else {
+                return (
+                  <div className="coupon_list" key={index}>
+                    <p>[중복가능] {coupon.coupon_name}</p>
+                    {coupon.coupon_percent ? (
+                      <p>{coupon.coupon_percent}% 할인</p>
+                    ) : (
+                      <p>{coupon.coupon_price}원 할인</p>
+                    )}
+                    <div className="coupon_btn_box">
+                      <div
+                        className="coupon_btn"
+                        onClick={() => {
+                          if (dupliCoupon === coupon.coupon_id) {
+                            setDupliOnCoupon("");
+                            alert(
+                              `${coupon.coupon_name}이(가) 해제되었습니다.`
+                            );
+                          } else {
+                            setDupliOnCoupon(coupon.coupon_id);
+                            alert(
+                              `${coupon.coupon_name}이(가) 적용되었습니다.`
+                            );
+                          }
+                        }}
+                        style={{
+                          backgroundColor:
+                            dupliCoupon === coupon.coupon_id ? "#000035" : "",
+                          color:
+                            dupliCoupon === coupon.coupon_id ? "white" : "",
+                        }}
+                      >
+                        적용
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+            })}
+        </div>
+        <div id="mobile" className="pay_btn" onClick={handlePaymentClick}>
+          {salePrice.toLocaleString()}원 결제하기
         </div>
         <div className="space"></div>
       </div>
 
       {modalOpen && (
-        <PayCartModal setModalOpen={setModalOpen} orderInfo={orderData} />
+        // <PayCartModal setModalOpen={setModalOpen} orderInfo={orderData} />
+        <TossCheckoutPage setModalOpen={setModalOpen} orderInfo={orderData} />
       )}
     </div>
   );

@@ -259,4 +259,37 @@
     height: 5vw;
     font-size: 2vw;
   }
+  .pay_s3 #mobile.pay_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pay_s3 .coupon_box1 {
+    margin-top: 4vw;
+    margin-right: 2vw;
+  }
+  .pay_s3 .coupon_box1 > p {
+    width: 33vw;
+    margin: 0;
+    font-size: 3vw;
+    margin-left: auto;
+  }
+  .pay_s3 .coupon_box1 .coupon_list {
+    width: 50vw;
+    height: auto;
+    margin-left: auto;
+    padding: 1vw 0;
+    margin-top: 1vw;
+  }
+  .pay_s3 .coupon_box1 .coupon_list > p {
+    font-size: 2vw;
+  }
+  .pay_s3 .coupon_box1 .coupon_list .coupon_btn_box {
+    width: 5vw;
+    height: 5vw;
+  }
+  .pay_s3 .coupon_box1 .coupon_list .coupon_btn_box .coupon_btn {
+    height: 100%;
+    font-size: 2vw;
+  }
 }

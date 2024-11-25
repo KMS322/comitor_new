@@ -1,5 +1,6 @@
 import "./App.css";
 import "./CSS/fonts.css";
+import "./CSS/toss_style.css";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Routes, Route } from "react-router-dom";
@@ -21,6 +22,9 @@ import PayAllContents from "./Page/payAll/payAllContents";
 import PayCompleteContent from "./Page/payComplete/payCompleteContent";
 import ShopDetailContents from "./Page/shopDetail/shopDetailContents";
 import BoardContent from "./Page/board/boardContent.js";
+import TossCheckoutPage from "./Page/toss_checkout.js";
+import TossFailPage from "./Page/toss_fail.js";
+import TossSuccessPage from "./Page/toss_success.js";
 import AdminMain from "./AdminPage/adminMain.js";
 import AdminLogin from "./AdminPage/adminLogin.js";
 import AdminSignup from "./AdminPage/adminSignup.js";
@@ -63,6 +67,10 @@ const App = () => {
         <Route path="/complete" element={<PayCompleteContent />} />
         <Route path="/shopDetail/:code" element={<ShopDetailContents />} />
         <Route path="/board" element={<BoardContent />} />
+
+        <Route path="/toss/checkout" element={<TossCheckoutPage />} />
+        <Route path="/toss/success" element={<TossSuccessPage />} />
+        <Route path="/toss/fail" element={<TossFailPage />} />
 
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/adminSignup" element={<AdminSignup />} />

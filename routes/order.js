@@ -8,6 +8,7 @@ const dayjs = require("dayjs");
 
 router.post("/add", async (req, res, next) => {
   try {
+    const { orderInfo } = req.body;
     const {
       deliveryInfo,
       price,
@@ -17,7 +18,7 @@ router.post("/add", async (req, res, next) => {
       selectedCnt,
       uniqueCarts,
     } = req.body.orderInfo;
-    const { page } = req.body;
+    const page = orderInfo.page;
     const orderCode = dayjs().format("YYYYMMDDHHmmss");
     let cnt = 0;
     if (page === "pay1") {
