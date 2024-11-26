@@ -43,6 +43,7 @@ app.use(
       "http://localhost",
       "http://localhost:80",
       "http://183.111.126.111:80",
+      "http://183.111.126.111",
       "http://comitor0516.cafe24.com",
       "http://comitor0516.cafe24.com:80",
     ],
