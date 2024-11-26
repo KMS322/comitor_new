@@ -44,8 +44,8 @@ app.use(
       "http://localhost:80",
       "http://183.111.126.111:80",
       "http://183.111.126.111",
-      "http://comitor0516.cafe24.com",
-      "http://comitor0516.cafe24.com:80",
+      "http://comitor.shop",
+      "http://comitor.shop:80",
     ],
     credentials: true,
   })
