@@ -62,7 +62,7 @@ const AdminUsers = () => {
   return (
     <>
       <AdminSubHeader data={"유저 관리"} />
-      {(me && me === "") || me.user_id === "admin" ? (
+      {(me && me === "") || me.user_id === "ubuntu0516" ? (
         <div className="adminUsers">
           <div className="table">
             <div className="head_row row">

@@ -95,7 +95,7 @@ const BoardContent = () => {
                   {list.board_title}
                 </p>
                 <p>{formatDateTime(list.createdAt)}</p>
-                {me && me.user_id === "admin" ? (
+                {me && me.user_id === "ubuntu0516" ? (
                   <p
                     style={{ cursor: "pointer" }}
                     onClick={() => {

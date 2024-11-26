@@ -52,7 +52,7 @@ const AdminCoupon = () => {
   return (
     <>
       <AdminSubHeader data={"쿠폰 관리"} />
-      {(me && me === "") || me.user_id === "admin" ? (
+      {(me && me === "") || me.user_id === "ubuntu0516" ? (
         <>
           <div className="adminCoupons">
             {coupons.length === 0 ? (

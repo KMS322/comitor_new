@@ -53,7 +53,7 @@ const AdminBanners = () => {
   return (
     <>
       <AdminSubHeader data={"배너 관리"} />
-      {(me && me === "") || me.user_id === "admin" ? (
+      {(me && me === "") || me.user_id === "ubuntu0516" ? (
         <>
           <div className="adminBanners">
             <div className="upload_btn">

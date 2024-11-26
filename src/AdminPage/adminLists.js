@@ -58,7 +58,7 @@ const AdminLists = () => {
   return (
     <>
       <AdminSubHeader data={"상품 관리"} />
-      {(me && me === "") || me.user_id === "admin" ? (
+      {(me && me === "") || me.user_id === "ubuntu0516" ? (
         <div className="adminLists">
           <div className="upload_btn">
             <p

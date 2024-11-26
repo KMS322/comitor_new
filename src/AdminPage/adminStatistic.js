@@ -73,7 +73,7 @@ const AdminStatistics = () => {
   return (
     <>
       <AdminSubHeader data={"통계"} />
-      {(me && me === "") || me.user_id === "admin" ? (
+      {(me && me === "") || me.user_id === "ubuntu0516" ? (
         <div className="adminStatistics">
           <p>누적 판매량</p>
           <div className="rank_container">
