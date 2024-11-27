@@ -47,12 +47,14 @@ const AdminLists = () => {
     });
   }, [dispatch]);
   const deleteProduct = (code) => {
-    dispatch({
-      type: DELETE_PRODUCT_REQUEST,
-      data: {
-        code,
-      },
-    });
+    if (window.confirm("정말로 삭제하시겠습니까?")) {
+      dispatch({
+        type: DELETE_PRODUCT_REQUEST,
+        data: {
+          code,
+        },
+      });
+    }
   };
 
   return (
@@ -81,10 +83,6 @@ const AdminLists = () => {
             </div>
             {uniqueProducts &&
               uniqueProducts.map((product, index) => {
-                console.log(
-                  "  product.product_originPrice :  ",
-                  typeof product.product_originPrice
-                );
                 return (
                   <div
                     className={

@@ -45,7 +45,6 @@ const LoginContent = () => {
   const googleLogin = () => {
     window.location.href = "http://localhost:3060/sns/google";
   };
-
   return (
     <div className="login_s1">
       <div className="section_container">
@@ -98,35 +97,34 @@ const LoginContent = () => {
             회원가입
           </div>
           <div className="kakao_btn">
-            <img src="/images/login/login_kakao.png" alt="" />
-
-            <p
+            <img
               onClick={() => {
                 kakaoLogin();
               }}
-            >
-              카카오 로그인
-            </p>
+              src="/images/login/login_kakao.png"
+              alt=""
+            />
+            <p>카카오 로그인</p>
           </div>
           <div className="kakao_btn">
-            <img src="/images/login/login_naver.png" alt="" />
-            <p
+            <img
               onClick={() => {
                 naverLogin();
               }}
-            >
-              네이버 로그인
-            </p>
+              src="/images/login/login_naver.png"
+              alt=""
+            />
+            <p>네이버 로그인</p>
           </div>
           <div className="kakao_btn">
-            <img src="/images/login/login_google.png" alt="" />
-            <p
+            <img
               onClick={() => {
                 googleLogin();
               }}
-            >
-              구글 로그인
-            </p>
+              src="/images/login/login_google.png"
+              alt=""
+            />
+            <p>구글 로그인</p>
           </div>
         </div>
       </div>

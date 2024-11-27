@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import AdminSubHeader from "./adminSubHeader";
-import { LOAD_USERS_REQUEST } from "../reducers/user";
+import { LOAD_USERS_REQUEST, DELETE_USER_REQUEST } from "../reducers/user";
 import {
   LOAD_ALL_LISTS_REQUEST,
   LOAD_COUPON_REQUEST,
@@ -17,7 +17,7 @@ const AdminUsers = () => {
   const [selectedUser, setSelectedUser] = useState("");
   const navigate = useNavigate();
   const me = location.state && location.state.me;
-  const { users } = useSelector((state) => state.user);
+  const { users, deleteUserDone } = useSelector((state) => state.user);
   const { allLists, coupons } = useSelector((state) => state.coupon);
   useEffect(() => {
     dispatch({
@@ -39,6 +39,11 @@ const AdminUsers = () => {
       type: LOAD_COUPON_REQUEST,
     });
   }, []);
+  useEffect(() => {
+    if (deleteUserDone) {
+      window.location.href = "/adminUsers";
+    }
+  }, [deleteUserDone]);
   const removeDuplicatesById = (lists) => {
     if (!lists || !Array.isArray(lists)) {
       return [];
@@ -58,6 +63,17 @@ const AdminUsers = () => {
   const uniqueLists = removeDuplicatesById(allLists);
   const uniqueCoupons = removeDuplicatesById(coupons);
   // console.log("uniqueLists : ", uniqueLists);
+
+  const deleteUser = (user_id) => {
+    if (window.confirm("정말로 삭제하시겠습니까?")) {
+      dispatch({
+        type: DELETE_USER_REQUEST,
+        data: {
+          user_id,
+        },
+      });
+    }
+  };
 
   return (
     <>
@@ -136,7 +152,14 @@ const AdminUsers = () => {
                       >
                         쿠폰지급
                       </div>
-                      <div className="btn">삭제</div>
+                      <div
+                        className="btn"
+                        onClick={() => {
+                          deleteUser(user.user_id);
+                        }}
+                      >
+                        삭제
+                      </div>
                     </div>
                   </div>
                 );

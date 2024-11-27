@@ -28,6 +28,9 @@ import {
   LOAD_USERS_REQUEST,
   LOAD_USERS_SUCCESS,
   LOAD_USERS_FAILURE,
+  DELETE_USER_REQUEST,
+  DELETE_USER_SUCCESS,
+  DELETE_USER_FAILURE,
 } from "../reducers/user";
 
 function loadUserAPI() {
@@ -202,6 +205,26 @@ function* loadUsers() {
   }
 }
 
+function deleteUserAPI(data) {
+  return axios.post("/user/delete", data);
+}
+
+function* deleteUser(action) {
+  try {
+    const result = yield call(deleteUserAPI, action.data);
+    yield put({
+      type: DELETE_USER_SUCCESS,
+      data: result.data,
+    });
+  } catch (err) {
+    console.error(err);
+    yield put({
+      type: DELETE_USER_FAILURE,
+      error: err.response.data,
+    });
+  }
+}
+
 function* watchLoadUser() {
   yield takeLatest(LOAD_MY_INFO_REQUEST, loadUser);
 }
@@ -236,6 +259,9 @@ function* watchChangeAddress() {
 function* watchLoadUsersAddress() {
   yield takeLatest(LOAD_USERS_REQUEST, loadUsers);
 }
+function* watchUserOrder() {
+  yield takeLatest(DELETE_USER_REQUEST, deleteUser);
+}
 export default function* userSaga() {
   yield all([
     fork(watchLoadUser),
@@ -247,5 +273,6 @@ export default function* userSaga() {
     fork(watchChangePhone),
     fork(watchChangeAddress),
     fork(watchLoadUsersAddress),
+    fork(watchUserOrder),
   ]);
 }

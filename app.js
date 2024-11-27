@@ -40,10 +40,10 @@ passportConfig();
 app.use(
   cors({
     origin: [
-      "http://localhost",
-      "http://localhost:80",
-      "http://183.111.126.111:80",
-      "http://183.111.126.111",
+      // "http://localhost",
+      // "http://localhost:80",
+      // "http://183.111.126.111:80",
+      // "http://183.111.126.111",
       "http://comitor.shop",
       "http://comitor.shop:80",
     ],
@@ -72,7 +72,7 @@ app.use(passport.session());
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 app.get("/", (req, res) => {
-  res.send("server on");
+  res.send("server on1");
 });
 
 app.use("/user", userRouter);

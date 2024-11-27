@@ -36,12 +36,14 @@ const AdminCoupon = () => {
   }, [dispatch]);
 
   const deleteCoupon = (id) => {
-    dispatch({
-      type: DELETE_COUPON_REQUEST,
-      data: {
-        id,
-      },
-    });
+    if (window.confirm("정말로 삭제하시겠습니까?")) {
+      dispatch({
+        type: DELETE_COUPON_REQUEST,
+        data: {
+          id,
+        },
+      });
+    }
   };
 
   useEffect(() => {

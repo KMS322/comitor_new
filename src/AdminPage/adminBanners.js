@@ -12,7 +12,6 @@ const AdminBanners = () => {
   const me = location.state && location.state.me;
   const [openForm, setOpenForm] = useState(false);
   const { banners, deleteBannerDone } = useSelector((state) => state.banner);
-  console.log("banners : ", banners);
   const removeDuplicatesById = (lists) => {
     if (!lists || !Array.isArray(lists)) {
       return [];
@@ -37,12 +36,14 @@ const AdminBanners = () => {
   }, [dispatch]);
 
   const deleteBanner = (id) => {
-    dispatch({
-      type: DELETE_BANNER_REQUEST,
-      data: {
-        id,
-      },
-    });
+    if (window.confirm("정말로 삭제하시겠습니까?")) {
+      dispatch({
+        type: DELETE_BANNER_REQUEST,
+        data: {
+          id,
+        },
+      });
+    }
   };
 
   useEffect(() => {
@@ -50,6 +51,7 @@ const AdminBanners = () => {
       window.location.href = "/adminBanners";
     }
   }, [deleteBannerDone]);
+  console.log("me : ", me);
   return (
     <>
       <AdminSubHeader data={"배너 관리"} />

@@ -199,4 +199,20 @@ router.get("/loadUsers", async (req, res, next) => {
   }
 });
 
+router.post("/delete", async (req, res, next) => {
+  try {
+    const deletedUser = await User.findOne({
+      where: { user_id: req.body.user_id },
+    });
+    await User.destroy({
+      where: { user_id: req.body.user_id },
+    });
+
+    res.status(200).json(deletedUser);
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+});
+
 module.exports = router;

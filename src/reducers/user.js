@@ -28,6 +28,9 @@ export const initialState = {
   changeAddressLoading: false,
   changeAddressDone: false,
   changeAddressError: null,
+  deleteUserLoading: false,
+  deleteUserDone: false,
+  deleteUserError: null,
   me: null,
   signUpData: {},
   loginData: {},
@@ -69,6 +72,10 @@ export const CHANGE_ADDRESS_FAILURE = "CHANGE_ADDRESS_FAUILURE";
 export const LOAD_USERS_REQUEST = "LOAD_USERS_REQUEST";
 export const LOAD_USERS_SUCCESS = "LOAD_USERS_SUCCESS";
 export const LOAD_USERS_FAILURE = "LOAD_USERS_FAUILURE";
+
+export const DELETE_USER_REQUEST = "DELETE_USER_REQUEST";
+export const DELETE_USER_SUCCESS = "DELETE_USER_SUCCESS";
+export const DELETE_USER_FAILURE = "DELETE_USER_FAILURE";
 
 export const loginRequestAction = (data) => {
   return {
@@ -212,6 +219,22 @@ const reducer = (state = initialState, action) => {
       case LOAD_USERS_FAILURE:
         draft.loadUsersLoading = false;
         draft.loadUsersError = action.error;
+        break;
+      case DELETE_USER_REQUEST:
+        draft.deleteUserLoading = true;
+        draft.deleteUserError = null;
+        draft.deleteUserDone = false;
+        break;
+      case DELETE_USER_SUCCESS:
+        draft.deleteUserLoading = false;
+        draft.deleteUserDone = true;
+        draft.users = draft.users.filter(
+          (item) => item.user_id !== action.data.id
+        );
+        break;
+      case DELETE_USER_FAILURE:
+        draft.deleteUserLoading = false;
+        draft.deleteUserError = action.error;
         break;
       default:
         return state;

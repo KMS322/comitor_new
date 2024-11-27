@@ -10,7 +10,6 @@ const AdminLogin = () => {
   const navigate = useNavigate();
   const [user_id, onChangeId] = useInput("");
   const [user_pw, onChangePw] = useInput("");
-
   const onSubmitForm = useCallback(
     (e) => {
       e.preventDefault();
@@ -26,6 +25,11 @@ const AdminLogin = () => {
     [user_id, user_pw]
   );
   useEffect(() => {
+    if (me && logInDone) {
+      window.location.href = "/adminMain";
+    }
+  }, [me, logInDone]);
+  useEffect(() => {
     if (logInDone) {
       navigate("/adminMain", { state: { me } });
     }
@@ -33,8 +37,9 @@ const AdminLogin = () => {
   useEffect(() => {
     if (logInError) {
       alert(logInError);
-      onChangeId("");
-      onChangePw("");
+      // onChangeId("");
+      // onChangePw("");
+      window.location.href = "/admin";
     }
   }, [logInError]);
   return (
@@ -46,14 +51,14 @@ const AdminLogin = () => {
             placeholder="아이디"
             type="text"
             name="user_id"
-            value={user_id}
+            value={user_id && user_id}
             onChange={onChangeId}
           />
           <input
             placeholder="비밀번호"
             type="password"
             name="user_pw"
-            value={user_pw}
+            value={user_pw && user_pw}
             onChange={onChangePw}
           />
         </div>

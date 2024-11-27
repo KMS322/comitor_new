@@ -44,7 +44,7 @@ const AdminOrders = () => {
       self.findIndex(
         (o) =>
           o.order_code === order.order_code &&
-          o.product_code === order.product_code
+          o?.product_code === order?.product_code
       )
   );
 
@@ -62,14 +62,15 @@ const AdminOrders = () => {
     });
     return `${formattedDate} ${formattedTime}`;
   };
-
   const deleteOrder = (code) => {
-    dispatch({
-      type: DELETE_ORDER_REQUEST,
-      data: {
-        code,
-      },
-    });
+    if (window.confirm("정말로 삭제하시겠습니까?")) {
+      dispatch({
+        type: DELETE_ORDER_REQUEST,
+        data: {
+          code,
+        },
+      });
+    }
   };
 
   useEffect(() => {
@@ -113,10 +114,10 @@ const AdminOrders = () => {
                     <div className="productName">
                       {orderedproducts.map((product, index) => {
                         const selectedProduct = products.find(
-                          (item) => item.product_code === product.product_code
+                          (item) => item?.product_code === product?.product_code
                         );
                         return (
-                          <p key={index}>{selectedProduct.product_code}</p>
+                          <p key={index}>{selectedProduct?.product_code}</p>
                         );
                       })}
                     </div>
