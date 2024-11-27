@@ -13,7 +13,6 @@ const AdminOrders = () => {
   const ordersArray = useSelector((state) => state.order.orders);
   const { deleteOrderDone } = useSelector((state) => state.order);
   const { products } = useSelector((state) => state.adminProduct);
-
   useEffect(() => {
     dispatch({
       type: LOAD_ORDER_REQUEST,

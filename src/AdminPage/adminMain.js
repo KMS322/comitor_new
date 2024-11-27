@@ -9,8 +9,6 @@ const AdminMain = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { me } = useSelector((state) => state.user);
-  const location = useLocation();
-  const location_me = location.state && location.state.location_me;
   // useEffect(() => {
   //   dispatch({
   //     type: LOAD_MY_INFO_REQUEST,
@@ -33,49 +31,49 @@ const AdminMain = () => {
       <div className="adminMain">
         <p
           onClick={() => {
-            navigate("/adminLists", { state: { location_me } });
+            navigate("/adminLists", { state: { me } });
           }}
         >
           상품 목록
         </p>
         <p
           onClick={() => {
-            navigate("/adminOrders", { state: { location_me } });
+            navigate("/adminOrders", { state: { me } });
           }}
         >
           주문 목록
         </p>
         <p
           onClick={() => {
-            navigate("/adminBanners", { state: { location_me } });
+            navigate("/adminBanners", { state: { me } });
           }}
         >
           배너 목록
         </p>
         <p
           onClick={() => {
-            navigate("/adminCoupons", { state: { location_me } });
+            navigate("/adminCoupons", { state: { me } });
           }}
         >
           쿠폰 목록
         </p>
         <p
           onClick={() => {
-            navigate("/adminReviews", { state: { location_me } });
+            navigate("/adminReviews", { state: { me } });
           }}
         >
           리뷰 목록
         </p>
         <p
           onClick={() => {
-            navigate("/adminUsers", { state: { location_me } });
+            navigate("/adminUsers", { state: { me } });
           }}
         >
           유저 목록
         </p>
         <p
           onClick={() => {
-            navigate("/adminStatistics", { state: { location_me } });
+            navigate("/adminStatistics", { state: { me } });
           }}
         >
           통계
