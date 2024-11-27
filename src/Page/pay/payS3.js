@@ -20,9 +20,6 @@ const PayS3 = ({ carts, deliveryInfo, price }) => {
   const { me } = useSelector((state) => state.user);
   const selectedProduct = location.state && location.state.selectedProduct;
   const selectedCnt = location.state && location.state.selectedCnt;
-  console.log("pay mobile selectedProduct : ", selectedProduct);
-  console.log("pay mobile selectedCnt : ", selectedCnt);
-  console.log("me : ", me);
   const [totalPrice, setTotalPrice] = useState(0);
   const [salePrice, setSalePrice] = useState(0);
   const [onCoupon, setOnCoupon] = useState(false);

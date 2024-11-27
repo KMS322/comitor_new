@@ -51,7 +51,6 @@ const AdminBanners = () => {
       window.location.href = "/adminBanners";
     }
   }, [deleteBannerDone]);
-  console.log("me : ", me);
   return (
     <>
       <AdminSubHeader data={"배너 관리"} />

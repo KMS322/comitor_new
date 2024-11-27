@@ -14,7 +14,6 @@ const AdminMain = () => {
   //     type: LOAD_MY_INFO_REQUEST,
   //   });
   //   if (!me) {
-  //     console.log("main 속 me : ", me);
   //     // navigate("/admin");
   //   }
   // }, [me, dispatch]);

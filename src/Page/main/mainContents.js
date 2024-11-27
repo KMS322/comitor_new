@@ -18,7 +18,6 @@ const MainContents = () => {
   const { me } = useSelector((state) => state.user);
   const [modalOpen, setModalOpen] = useState(false);
   const [popupOpen, setPopupOpen] = useState(false);
-  console.log("me : ", me);
   const removeDuplicatesById = (lists) => {
     if (!lists || !Array.isArray(lists)) {
       return [];
@@ -39,13 +38,10 @@ const MainContents = () => {
   const allCoupon = uniqueCoupons.find(
     (coupon) => coupon?.coupon_type === "all"
   );
-  // console.log("allCoupon : ", allCoupon);
-  // console.log("me : ", me);
-  // console.log("couponLists : ", couponLists);
+
   const acceptableCoupon = couponLists.find(
     (list) => list?.coupon_id === allCoupon?.coupon_id
   );
-  // console.log("acceptableCoupon : ", acceptableCoupon);
   useEffect(() => {
     dispatch({
       type: LOAD_COUPON_REQUEST,
