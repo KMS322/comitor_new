@@ -35,6 +35,9 @@
   font-family: "NotoSansKr";
   margin-bottom: 0.5vw;
 }
+.footer_container .article_container1 .article p span {
+  font-size: 0.95vw;
+}
 .footer_container .article_container1 .article p:nth-child(1) {
   font-size: 1vw;
   font-weight: 600;

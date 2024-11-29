@@ -11,13 +11,17 @@ const Footer = () => {
       <div className="article_container1">
         <div className="article">
           <p>CUSTOMER CENTER</p>
-          <p>070-8790-05816</p>
+          <p>070-8790-0516</p>
           <p>평일 오전 09:00 - 18:00</p>
           <p>토/ 일/ 공휴일 휴무</p>
         </div>
         <div className="article">
           <p>COMPANY INFO</p>
-          <p>company (주)더우분투 owner 나도연</p>
+          <p>
+            <span>company</span> (주)더우분투 &nbsp;&nbsp;&nbsp;&nbsp;
+            <span>owner</span> 나도연
+          </p>
+          <p>BRN : 489-87-01877</p>
           <p>
             address : 경상북도 경산시 하양읍 하양로 13-13, 창업보육센터동 505호
           </p>
@@ -25,11 +29,14 @@ const Footer = () => {
         </div>
         <div className="article">
           <p>RETURN & EXCHANGE</p>
-          <p>
+          {/* <p>
             ㈜더우분투 – 경상북도 경산시 하양읍 하양로 13-13, 창업보육센터동
             505호
+          </p> */}
+          <p>
+            이 사이트를 이용하여 구매하신 후 반품 빛 교환을 원하시는 경우에는
           </p>
-          <p>지정택배사로 반품요청해주세요.</p>
+          <p>고객센터나 문의게시판을 이용해주세요.</p>
         </div>
         <div className="article">
           <p>BANK INFO</p>
@@ -39,10 +46,10 @@ const Footer = () => {
       </div>
       <div className="article_container2">
         <div className="article">
-          <p>경상북도 경산시 하양읍 하양로 13-13, 창업보육센터동 505호</p>
+          {/* <p>경상북도 경산시 하양읍 하양로 13-13, 창업보육센터동 505호</p>
           <p>+82 10 - 7276 - 6296</p>
           <p>ubuntu0516@naver.com</p>
-          <p>ubuntu0516@gmail.com</p>
+          <p>ubuntu0516@gmail.com</p> */}
         </div>
         <div
           className="logo"
