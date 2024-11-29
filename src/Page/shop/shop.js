@@ -50,7 +50,6 @@ const Shop = () => {
       setSortedProducts(uniqueProducts);
     }
   }, [uniqueProducts]);
-  console.log("uniqueProducts : ", uniqueProducts);
   const handleSort = (sort) => {
     let sortedProducts;
     switch (sort) {

@@ -2,16 +2,25 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const port = process.env.PORT || 80;
-// 정적 파일을 제공할 경로 설정
+const fs = require("fs");
 app.use(express.static(path.join(__dirname, "build")));
 
-// 모든 경로에 대해 index.html 제공 (React Router를 위한 설정)
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-// 포트 설정
-// const PORT = process.env.PORT || 8001;
+const mainImagePath = path.join(publicImagesPath, "mainImage");
+const bannerImagePath = path.join(publicImagesPath, "bannerImage");
+const detailPagePath = path.join(publicImagesPath, "detailPage");
+if (!fs.existsSync(mainImagePath)) {
+  fs.mkdirSync(mainImagePath);
+}
+if (!fs.existsSync(bannerImagePath)) {
+  fs.mkdirSync(bannerImagePath);
+}
+if (!fs.existsSync(detailPagePath)) {
+  fs.mkdirSync(detailPagePath);
+}
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

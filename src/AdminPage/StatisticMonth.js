@@ -4,8 +4,6 @@ import dayjs from "dayjs";
 
 const StatisticMonth = ({ datas }) => {
   const { orderProductsLists, uniqueProducts } = datas;
-  console.log("orderProductsLists : ", orderProductsLists);
-  console.log("uniqueProducts : ", uniqueProducts);
 
   const [years, setYears] = useState([]);
   const [months, setMonths] = useState([]);
