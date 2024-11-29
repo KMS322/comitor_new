@@ -9,6 +9,7 @@ app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
+const publicImagesPath = path.join(__dirname, "public/images");
 const mainImagePath = path.join(publicImagesPath, "mainImage");
 const bannerImagePath = path.join(publicImagesPath, "bannerImage");
 const detailPagePath = path.join(publicImagesPath, "detailPage");
