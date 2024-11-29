@@ -35,15 +35,15 @@ const LoginContent = () => {
   );
 
   const kakaoLogin = () => {
-    window.location.href = "http://localhost:3060/sns/kakao";
+    window.location.href = "http://comitor.shop:3060/sns/kakao";
   };
 
   const naverLogin = () => {
-    window.location.href = "http://localhost:3060/sns/naver";
+    window.location.href = "http://comitor.shop:3060/sns/naver";
   };
 
   const googleLogin = () => {
-    window.location.href = "http://localhost:3060/sns/google";
+    window.location.href = "http://comitor.shop:3060/sns/google";
   };
   return (
     <div className="login_s1">
