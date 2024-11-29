@@ -1,7 +1,7 @@
 const express = require("express");
 const passport = require("passport");
 const router = express.Router();
-const MAIN_URL = "http://localhost";
+const MAIN_URL = "http://comitor.shop";
 
 router.get("/kakao", passport.authenticate("kakao")); // 카카오톡 로그인 화면으로 redirect
 
