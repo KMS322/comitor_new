@@ -43,15 +43,7 @@
     margin-top: 4.92vw;
     margin-bottom: 2.76vw;
   }
-  .login_s1 .section_container .article_container .kakao_btn {
-    border: 1px solid #f7e028;
-  }
-  .login_s1 .section_container .article_container .kakao_btn img {
-    width: 9.49%;
-    height: 52.73%;
-    margin-left: 20.28vw;
-  }
-  .login_s1 .section_container .article_container .kakao_btn p {
-    font-size: 3.94vw;
+  .login_s1 .section_container .article_container .kakao_btn:nth-child(5) {
+    margin-top: 18vw;
   }
 }
