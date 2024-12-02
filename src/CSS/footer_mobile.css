@@ -30,8 +30,13 @@
   .footer_container .article_container1 .article p {
     font-size: 1.95vw;
   }
+  .footer_container .article_container1 .article p span {
+    font-size: 2.6vw;
+  }
   .footer_container .article_container2 {
     height: auto;
+    margin-top: 3vw;
+    margin-bottom: 2vw;
   }
   .footer_container .article_container2 .article {
     height: auto;
