@@ -4,6 +4,7 @@ const app = express();
 const port = process.env.PORT || 80;
 const fs = require("fs");
 app.use(express.static(path.join(__dirname, "build")));
+app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
