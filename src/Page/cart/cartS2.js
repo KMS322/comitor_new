@@ -170,13 +170,13 @@ const CartS2 = () => {
             <p>배송 형태/배송비</p>
             <p></p>
           </div>
-          {nowCarts.map((cart) => {
+          {nowCarts.map((cart, index) => {
             const selectedProduct = uniqueProducts.find(
               (item) => item.product_code === cart.product_code
             );
             if (!selectedProduct) return null;
             return (
-              <div className="content" key={cart.product_code}>
+              <div className="content" key={index}>
                 <img
                   src={
                     cart.checked
@@ -304,13 +304,13 @@ const CartS2 = () => {
           </div>
           <p>수량</p>
         </div>
-        {nowCarts.map((cart) => {
+        {nowCarts.map((cart, index) => {
           const selectedProduct = uniqueProducts.find(
             (item) => item.product_code === cart.product_code
           );
           if (!selectedProduct) return null;
           return (
-            <React.Fragment key={cart.product_code}>
+            <React.Fragment key={index}>
               <div className="row_name">
                 <img
                   src={

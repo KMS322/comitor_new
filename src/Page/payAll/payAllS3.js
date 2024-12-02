@@ -133,6 +133,14 @@ const PayAllS3 = ({ deliveryInfo }) => {
     }
   }, [selectedCart, uniqueProducts]);
   const handlePaymentClick = () => {
+    uniqueCarts.map((item) => {
+      const product = uniqueProducts.find(
+        (product) => product.product_code === item.product_code
+      );
+      if (product) {
+        item.product_name = product.product_name;
+      }
+    });
     const data = {
       uniqueCarts,
       me,

@@ -5,13 +5,14 @@ const generateRandomString = () => window.btoa(Math.random()).slice(0, 20);
 const clientKey = "test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm";
 
 const TossCheckoutPage = ({ setModalOpen, orderInfo }) => {
+  console.log("orderInfo : ", orderInfo);
   const [ready, setReady] = useState(false);
   const [widgets, setWidgets] = useState(null);
   const [amount, setAmount] = useState({
     currency: "KRW",
-    value: 1,
+    value: orderInfo?.price,
   });
-
+  console.log("amount : ", amount);
   useEffect(() => {
     async function fetchPaymentWidgets() {
       const tossPayments = await loadTossPayments(clientKey);
@@ -88,9 +89,15 @@ const TossCheckoutPage = ({ setModalOpen, orderInfo }) => {
                  */
                 await widgets?.requestPayment({
                   orderId: generateRandomString(),
-                  orderName: "토스 티셔츠 외 2건",
-                  customerName: "김토스",
-                  customerEmail: "customer123@gmail.com",
+                  orderName:
+                    Array.isArray(orderInfo.uniqueCarts) &&
+                    orderInfo.uniqueCarts.length > 0
+                      ? `${orderInfo.uniqueCarts[0].product_name} 외 ${
+                          orderInfo.uniqueCarts.length - 1
+                        }건`
+                      : orderInfo.products.product_name,
+                  customerName: orderInfo.deliveryInfo.name,
+                  // customerEmail: "customer123@gmail.com",
                   // successUrl:
                   //   window.location.origin +
                   //   "/toss/success" +
