@@ -307,35 +307,20 @@
 
   /* shopDetail_s4 */
   .shopDetail_s4 {
-    height: 211.21vw;
+    /* height: 211.21vw; */
+    height: auto;
   }
   .shopDetail_s4 .section_container {
     width: 90.89%;
     margin-top: 22.66vw;
   }
-  .shopDetail_s4 .section_container .input_box:nth-child(1) {
-    height: 32.41%;
-  }
-  .shopDetail_s4 .section_container .input_box:nth-child(1) p:nth-child(1) {
-    height: 17.06%;
-  }
-  .shopDetail_s4 .section_container .input_box:nth-child(1) p:nth-child(2) {
-    height: 82.94%;
-  }
-  .shopDetail_s4 .section_container .input_box:nth-child(2) {
-    margin-top: 23.36vw;
-    mask-border: 42.29;
-  }
-  .shopDetail_s4 .section_container .input_box:nth-child(2) p:nth-child(1) {
-    height: 20.66%;
-  }
-  .shopDetail_s4 .section_container .input_box:nth-child(2) p:nth-child(2) {
-    height: 79.34%;
-  }
-  .shopDetail_s4 .section_container .input_box:nth-child(2) {
-    height: 26.77%;
-  }
   .shopDetail_s4 .section_container .input_box p:nth-child(1) {
+    height: 6vw;
     font-size: 3.5vw;
+  }
+  .shopDetail_s4 .section_container .input_box p:nth-child(2) {
+    font-size: 3vw;
+    line-height: 4vw;
+    padding: 3vw;
   }
 }

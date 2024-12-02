@@ -327,7 +327,8 @@
 /* shopDetail_s4 */
 .shopDetail_s4 {
   width: 100%;
-  height: 66.04vw;
+  height: auto;
+  margin-bottom: 5vw;
 }
 .shopDetail_s4 .section_container {
   width: 62.5%;
@@ -338,11 +339,14 @@
 }
 .shopDetail_s4 .section_container .input_box {
   width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
+  margin-bottom: 4vw;
 }
 .shopDetail_s4 .section_container .input_box p:nth-child(1) {
   width: 100%;
+  height: 3.33vw;
   background-color: #000035;
   font-size: 1.04vw;
   font-weight: 500;
@@ -353,13 +357,17 @@
 }
 .shopDetail_s4 .section_container .input_box p:nth-child(2) {
   width: 100%;
+  height: auto;
   border: 1px solid #000035;
+  padding: 2vw;
+  font-size: 0.8vw;
+  line-height: 1.3vw;
 }
+
 .shopDetail_s4 .section_container .input_box:nth-child(1) {
-  height: 51.34%;
   margin-top: 8.33vw;
 }
-.shopDetail_s4 .section_container .input_box:nth-child(1) p:nth-child(1) {
+/* .shopDetail_s4 .section_container .input_box:nth-child(1) p:nth-child(1) {
   height: 9.83%;
 }
 .shopDetail_s4 .section_container .input_box:nth-child(1) p:nth-child(2) {
@@ -374,4 +382,4 @@
 }
 .shopDetail_s4 .section_container .input_box:nth-child(2) p:nth-child(2) {
   height: 69.38%;
-}
+} */
