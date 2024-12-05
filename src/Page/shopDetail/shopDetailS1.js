@@ -190,7 +190,7 @@ const ShopDetailS1 = ({ productCode }) => {
             </p>
           </div>
           <p id="mobile" className="total_count">
-            (1개)
+            {/* (1개) */}
           </p>
         </div>
       </div>

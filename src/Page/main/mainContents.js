@@ -17,7 +17,7 @@ const MainContents = () => {
   const { coupons, couponLists } = useSelector((state) => state.coupon);
   const { me } = useSelector((state) => state.user);
   const [modalOpen, setModalOpen] = useState(false);
-  const [popupOpen, setPopupOpen] = useState(true);
+  const [popupOpen, setPopupOpen] = useState(false);
   const removeDuplicatesById = (lists) => {
     if (!lists || !Array.isArray(lists)) {
       return [];
@@ -75,7 +75,7 @@ const MainContents = () => {
     if (popupOpen) {
       const timer = setTimeout(() => {
         setPopupOpen(false);
-      }, 400000); // 5초 후 popupOpen을 false로 설정
+      }, 4000); // 5초 후 popupOpen을 false로 설정
       return () => clearTimeout(timer); // 컴포넌트가 언마운트될 때 타이머를 정리
     }
   }, [popupOpen]);
