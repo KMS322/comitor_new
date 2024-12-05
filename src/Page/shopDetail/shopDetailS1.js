@@ -43,7 +43,7 @@ const ShopDetailS1 = ({ productCode }) => {
     setUniqueProducts(removeDuplicatesById(products));
   }, [products]);
 
-  const selectedProduct = uniqueProducts.find(
+  const selectedProduct = uniqueProducts?.find(
     (item) => Number(item.product_code) === Number(productCode)
   );
 
@@ -95,22 +95,22 @@ const ShopDetailS1 = ({ productCode }) => {
     <div className="shopDetail_s1">
       <div className="section_container">
         <img
-          src={`/images/mainImage/${selectedProduct.product_imgUrl}`}
+          src={`/images/mainImage/${selectedProduct?.product_imgUrl}`}
           alt=""
         />
         <div className="article">
           <p>BEST</p>
           <p
-            dangerouslySetInnerHTML={{ __html: selectedProduct.product_name }}
+            dangerouslySetInnerHTML={{ __html: selectedProduct?.product_name }}
           ></p>
           <p>{`${
             nextDate.getMonth() + 1
           }/${nextDate.getDate()}(${nextDayOfWeek}) 도착예정`}</p>
           <p>
             <span>
-              {selectedProduct.product_originPrice.toLocaleString()}원
+              {selectedProduct?.product_originPrice.toLocaleString()}원
             </span>
-            {selectedProduct.product_salePrice.toLocaleString()}원
+            {selectedProduct?.product_salePrice.toLocaleString()}원
           </p>
           <div className="count_box">
             <p>수량</p>
@@ -137,7 +137,9 @@ const ShopDetailS1 = ({ productCode }) => {
           <div className="line"></div>
           <p id="pc">
             <span>총 상품 금액(수량)</span>
-            {(selectedProduct.product_salePrice * selectedCnt).toLocaleString()}
+            {(
+              selectedProduct?.product_salePrice * selectedCnt
+            ).toLocaleString()}
             <span>({selectedCnt}개)</span>
           </p>
           <div className="btn_box">
@@ -146,7 +148,7 @@ const ShopDetailS1 = ({ productCode }) => {
               onClick={() => {
                 if (me) {
                   setModalOpen(true);
-                  addCart(selectedProduct.product_code);
+                  addCart(selectedProduct?.product_code);
                 } else {
                   alert("로그인을 해주세요.");
                   window.location.href = "/login";
@@ -184,7 +186,7 @@ const ShopDetailS1 = ({ productCode }) => {
             <p>총 상품 금액(수량)</p>
             <p>
               {(
-                selectedProduct.product_salePrice * selectedCnt
+                selectedProduct?.product_salePrice * selectedCnt
               ).toLocaleString()}
             </p>
           </div>
