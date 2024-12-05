@@ -70,7 +70,6 @@ const ShopDetailS1 = ({ productCode }) => {
     };
   };
   const { nextDate, nextDayOfWeek } = calculateNextDateAndDay();
-  console.log("selectedProduct : ", selectedProduct);
   // if (!selectedProduct) {
   //   return (
   //     <div className="shopDetail_s1">
