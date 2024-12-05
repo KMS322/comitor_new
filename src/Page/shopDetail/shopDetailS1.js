@@ -70,25 +70,22 @@ const ShopDetailS1 = ({ productCode }) => {
     };
   };
   const { nextDate, nextDayOfWeek } = calculateNextDateAndDay();
-
-  if (!selectedProduct) {
-    return (
-      <div className="shopDetail_s1">
-        <div className="section_container">
-          <p>상품을 찾을 수 없습니다.</p>
-        </div>
-      </div>
-    );
-  }
+  console.log("selectedProduct : ", selectedProduct);
+  // if (!selectedProduct) {
+  //   return (
+  //     <div className="shopDetail_s1">
+  //       <div className="section_container">
+  //         <p>상품을 찾을 수 없습니다.</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   const addCart = (code) => {
     let user = "non";
     if (me) {
       user = me.id;
     }
-    console.log("code : ", code);
-    console.log("user : ", user);
-    console.log("selectedCnt : ", selectedCnt);
     dispatch({
       type: ADD_CART_REQUEST,
       data: { code, user, selectedCnt },
