@@ -5,7 +5,9 @@
   }
   .about_s1 > img {
     width: 38.4%;
-    height: fit-content;
+    /* height: fit-content; */
+    height: auto;
+    /* aspect-ratio: auto; */
     margin-top: 13.55vw;
     margin-left: 7.01vw;
   }

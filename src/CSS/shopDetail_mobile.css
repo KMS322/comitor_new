@@ -195,6 +195,9 @@
     margin-top: 5.14vw;
     height: 66.82vw;
   }
+  .shopDetail_s2 .section_container .img_box_open {
+    height: auto;
+  }
   .shopDetail_s2 .section_container .more_btn {
     width: 42.06%;
     height: 10.51vw;
