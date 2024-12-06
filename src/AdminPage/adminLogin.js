@@ -30,6 +30,12 @@ const AdminLogin = () => {
     }
   }, [me, logInDone]);
   useEffect(() => {
+    if (me) {
+      window.location.href = "/adminMain";
+    }
+  }, [me]);
+  console.log("me : ", me);
+  useEffect(() => {
     if (logInDone) {
       navigate("/adminMain", { state: { me } });
     }
@@ -42,6 +48,7 @@ const AdminLogin = () => {
       window.location.href = "/admin";
     }
   }, [logInError]);
+
   return (
     <>
       <div className="adminLogin">
