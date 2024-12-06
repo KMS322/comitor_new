@@ -48,7 +48,7 @@ app.use(
       "http://comitor.shop",
       "http://comitor.shop:80",
       "http://comitor.shop:3060",
-      "http://localhost:3060",
+      // "http://localhost:3060",
     ],
     credentials: true,
   })
