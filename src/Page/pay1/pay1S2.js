@@ -90,7 +90,7 @@ const Pay1S2 = ({ me, onDeliveryInfoChange }) => {
             <div id="pc" className="row_content name_box">
               {checked ? (
                 me ? (
-                  `${me.user_name}  |  ${me.user_phone}`
+                  `${me.user_name || ""}  |  ${me.user_phone || ""}`
                 ) : (
                   ""
                 )
@@ -115,9 +115,9 @@ const Pay1S2 = ({ me, onDeliveryInfoChange }) => {
               {checked ? (
                 me ? (
                   <>
-                    {me.user_name}
+                    {me.user_name || ""}
                     <br />
-                    {me.user_phone}
+                    {me.user_phone || ""}
                   </>
                 ) : (
                   ""
@@ -145,7 +145,7 @@ const Pay1S2 = ({ me, onDeliveryInfoChange }) => {
             <div className="row_content address_box">
               {checked ? (
                 me ? (
-                  `${me.user_roadAddress} ${me.user_detailAddress}`
+                  `${me.user_roadAddress || ""} ${me.user_detailAddress || ""}`
                 ) : (
                   ""
                 )
