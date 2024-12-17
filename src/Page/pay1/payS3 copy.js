@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import PayModal from "./payModal";
 import "../../CSS/pay.css";
 import "../../CSS/pay_mobile.css";
 const PayS3 = ({ carts, deliveryInfo, price }) => {
-  // console.log("carts : ", carts);
-  // console.log("deliveryInfo : ", deliveryInfo);
-  // console.log("price : ", price);
-  const navigate = useNavigate();
   const location = useLocation();
   const noCouponPrice =
     location.state.selectedProduct &&
@@ -20,8 +16,7 @@ const PayS3 = ({ carts, deliveryInfo, price }) => {
   const { me } = useSelector((state) => state.user);
   const selectedProduct = location.state && location.state.selectedProduct;
   const selectedCnt = location.state && location.state.selectedCnt;
-  console.log("pay mobile selectedProduct : ", selectedProduct);
-  console.log("pay mobile selectedCnt : ", selectedCnt);
+
   const [totalPrice, setTotalPrice] = useState(0);
   const [salePrice, setSalePrice] = useState(0);
   const [onCoupon, setOnCoupon] = useState(false);
@@ -191,7 +186,6 @@ const PayS3 = ({ carts, deliveryInfo, price }) => {
               {typeof me !== "undefined" ? (
                 me === 0 ? (
                   carts.map((cartProduct, index) => {
-                    console.log("carts : ", carts);
                     return (
                       <>
                         <div className="row_product">

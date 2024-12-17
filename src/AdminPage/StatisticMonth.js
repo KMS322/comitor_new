@@ -49,10 +49,8 @@ const StatisticMonth = ({ datas }) => {
         dayjs(item.createdAt).format("YYYY") === selectedYear &&
         dayjs(item.createdAt).format("MM") === selectedMonth
       ) {
-        console.log("item : ", item);
         selectedArr.push(item);
       } else {
-        console.log("no item");
       }
     });
     const totalSales = uniqueProducts.map((product) => ({

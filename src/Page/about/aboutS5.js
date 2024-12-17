@@ -1,5 +1,6 @@
 import "../../CSS/about.css";
 import "../../CSS/about_mobile.css";
+
 const AboutS5 = () => {
   return (
     <div className="about_s5">

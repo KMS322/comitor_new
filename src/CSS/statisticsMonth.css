@@ -39,3 +39,9 @@
 .statisticsMonth .month_rank p:nth-child(1) {
   font-weight: 600;
 }
+.statisticsMonth .select_box #yearSelect {
+  height: 1.2vw;
+}
+.statisticsMonth .select_box #monthSelect {
+  height: 1.2vw;
+}

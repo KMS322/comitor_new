@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { loadTossPayments, ANONYMOUS } from "@tosspayments/tosspayments-sdk";
-
 const generateRandomString = () => window.btoa(Math.random()).slice(0, 20);
-const clientKey = "test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm";
+
+const clientKey = "test_gck_XZYkKL4MrjeEkp2RjEnBV0zJwlEW";
+// const clientKey = "live_gck_Ba5PzR0ArnW4K0EmjDeo8vmYnNeD";
 
 const TossCheckoutPage = ({ setModalOpen, orderInfo }) => {
-  console.log("orderInfo : ", orderInfo);
   const [ready, setReady] = useState(false);
   const [widgets, setWidgets] = useState(null);
   const [amount, setAmount] = useState({
     currency: "KRW",
     value: orderInfo?.price,
   });
+  console.log("orderInfo : ", orderInfo);
   console.log("amount : ", amount);
   useEffect(() => {
     async function fetchPaymentWidgets() {
@@ -81,6 +82,10 @@ const TossCheckoutPage = ({ setModalOpen, orderInfo }) => {
             className="btn primary w-100"
             onClick={async () => {
               try {
+                const successUrl =
+                  window.location.origin +
+                  "/toss/success?orderInfo=" +
+                  encodeURIComponent(JSON.stringify(orderInfo));
                 /**
                  * 결제 요청
                  * 결제를 요청하기 전에 orderId, amount를 서버에 저장하세요.
